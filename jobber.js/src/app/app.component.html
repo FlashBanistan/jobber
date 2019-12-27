@@ -1,0 +1,55 @@
+<mat-toolbar class="header" color="primary">
+  <div class="header-items">
+    <button *ngIf="isMobileView$ | async" mat-icon-button (click)="toggleDrawer()">
+      <mat-icon aria-label="Toggle sidenav">menu</mat-icon>
+    </button>
+    <span class="pointer" routerLink="/">Jobber</span>
+  </div>
+  <div class="header-items">
+    <ng-container *ngIf="isMobileView$ | async; else desktopView">
+      <button mat-icon-button [matMenuTriggerFor]="mobileMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #mobileMenu="matMenu">
+        <ng-container *ngIf="!(loggedIn$ | async); else loggedIn">
+          <button mat-menu-item color="accent" routerLink="/account/login">
+            <mat-icon>account_circle</mat-icon>Login/Register
+          </button>
+        </ng-container>
+
+        <ng-template #loggedIn>
+          <button mat-menu-item color="accent" (click)="logout()">Logout</button>
+        </ng-template>
+
+        <ng-container>
+          <button mat-menu-item color="accent">
+            <mat-icon>cloud_upload</mat-icon>
+            Upload Resume
+          </button>
+        </ng-container>
+      </mat-menu>
+    </ng-container>
+    <ng-template #desktopView>
+      <ng-container *ngIf="!(loggedIn$ | async); else loggedIn">
+        <button mat-button color="accent" routerLink="/account/login">
+          <mat-icon>account_circle</mat-icon>Login/Register
+        </button>
+      </ng-container>
+
+      <ng-template #loggedIn>
+        <button mat-button color="accent" (click)="logout()">Logout</button>
+      </ng-template>
+
+      <ng-container>
+        <button mat-button color="accent">
+          <mat-icon>cloud_upload</mat-icon>
+          Upload Resume
+        </button>
+      </ng-container>
+    </ng-template>
+  </div>
+</mat-toolbar>
+<div class="app-container">
+  <router-outlet></router-outlet>
+</div>

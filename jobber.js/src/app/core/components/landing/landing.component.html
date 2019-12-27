@@ -1,0 +1,56 @@
+<div class="center-page vertical-direction">
+  <app-job-search-container
+    [class.mobile-search-container]="isMobileView"
+  ></app-job-search-container>
+  <div>
+    <small>
+      <strong>
+        <a *ngFor="let search of recentSearches" mat-button>{{ search }}</a>
+      </strong>
+    </small>
+  </div>
+
+  <div class="highlights-container-start">
+    <div class="highlight-items-container">
+      <img src="https://place-hold.it/175x150" alt="" />
+      <mat-list>
+        <mat-list-item>Nemo iure necessitatibus tenetur!</mat-list-item>
+        <mat-list-item>Voluptates in voluptas necessitatibus officiis.</mat-list-item>
+        <mat-list-item>Illo, quod iure.</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="highlights-container-end">
+    <div class="highlight-items-container">
+      <mat-list>
+        <mat-list-item>Nemo iure necessitatibus tenetur!</mat-list-item>
+        <mat-list-item>Voluptates in voluptas necessitatibus officiis.</mat-list-item>
+        <mat-list-item>Illo, quod iure.</mat-list-item>
+      </mat-list>
+      <img src="https://place-hold.it/175x150" alt="" />
+    </div>
+  </div>
+
+  <div class="highlights-container-start">
+    <div class="highlight-items-container">
+      <img src="https://place-hold.it/175x150" alt="" />
+      <mat-list>
+        <mat-list-item>Nemo iure necessitatibus tenetur!</mat-list-item>
+        <mat-list-item>Voluptates in voluptas necessitatibus officiis.</mat-list-item>
+        <mat-list-item>Illo, quod iure.</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="highlights-container-end">
+    <div class="highlight-items-container">
+      <mat-list>
+        <mat-list-item>Nemo iure necessitatibus tenetur!</mat-list-item>
+        <mat-list-item>Voluptates in voluptas necessitatibus officiis.</mat-list-item>
+        <mat-list-item>Illo, quod iure.</mat-list-item>
+      </mat-list>
+      <img src="https://place-hold.it/175x150" alt="" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-fields-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-field {
+  margin-bottom: -19px;
+}
+
+.search-button {
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .search-container {
+    width: 100%;
+  }
+
+  .search-fields-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

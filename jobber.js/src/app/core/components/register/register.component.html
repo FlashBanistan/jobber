@@ -1,0 +1,49 @@
+<form class="center-page" [formGroup]="registerForm" (ngSubmit)="register.emit(registerForm.value)">
+  <mat-card class="mat-card">
+    <mat-card-header class="mat-card-header">
+      <mat-card-title class="mat-card-title">Register</mat-card-title>
+      <mat-card-subtitle>Enter a valid email and password to register</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="mat-card-content">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+        <mat-error *ngIf="registerForm.get('email').hasError('email')"
+          >Please enter a valid email address.</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirm_password" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="first_name" type="text" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="last_name" type="text" />
+      </mat-form-field>
+
+      <mat-error>{{ error }}</mat-error>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-flat-button color="primary" [disabled]="!registerForm.valid">
+        Register
+      </button>
+      <a mat-button color="primary" routerLink="/account/login">Login</a>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div class="loading-indicator" *ngIf="isLoading">
+  <mat-spinner color="accent"></mat-spinner>
+</div>

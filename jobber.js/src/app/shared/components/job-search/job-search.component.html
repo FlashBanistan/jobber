@@ -1,0 +1,42 @@
+<form class="search-container" (ngSubmit)="onSubmit()">
+  <div class="search-fields-container">
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Job Title</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Web Developer"
+        [formControl]="jobTitle$"
+        [matAutocomplete]="jobTitleAuto"
+      />
+      <mat-autocomplete autoActiveFirstOption #jobTitleAuto="matAutocomplete">
+        <mat-option *ngFor="let jobTitle of suggestedJobTitles" [value]="jobTitle">
+          {{ jobTitle }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Location</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="City, State, Zip"
+        [formControl]="location$"
+        [matAutocomplete]="locationAuto"
+      />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #locationAuto="matAutocomplete"
+        [displayWith]="locationDisplayFn"
+        (optionSelected)="onLocationSelected($event)"
+      >
+        <mat-option *ngFor="let location of suggestedLocations" [value]="location">
+          {{ location.city + ', ' + location.state }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="accent">Go</button>
+  </div>
+  <hr />
+</form>
