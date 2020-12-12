@@ -9,21 +9,12 @@ import { SharedModule } from "../shared/shared.module";
 import { environment } from "../../environments/environment";
 import { LandingContainerComponent } from "./components/landing/landing-container.component";
 import { LandingComponent } from "./components/landing/landing.component";
-import { RegisterContainerComponent } from "./components/register/register-container.component";
-import { RegisterComponent } from "./components/register/register.component";
-import { RegisterSuccessDialogComponent } from "./components";
 import { appReducers } from "./store/reducers/reducers";
 import { JobSearchEffects } from "./store/effects/job-search-effects";
 import { initialAppState } from "./store/state/state";
 
 @NgModule({
-  declarations: [
-    RegisterContainerComponent,
-    RegisterComponent,
-    RegisterSuccessDialogComponent,
-    LandingContainerComponent,
-    LandingComponent,
-  ],
+  declarations: [LandingContainerComponent, LandingComponent],
   imports: [
     StoreModule.forRoot(appReducers, { initialState: initialAppState }),
     EffectsModule.forRoot([JobSearchEffects]),

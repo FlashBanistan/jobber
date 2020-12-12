@@ -14,10 +14,10 @@ import { LoginEffects } from "./store/login-effects";
   declarations: [LoginContainerComponent, LoginComponent],
   imports: [
     CommonModule,
-    MaterialModule,
     ReactiveFormsModule,
     StoreModule.forFeature("login", loginReducers),
     EffectsModule.forFeature([LoginEffects]),
+    MaterialModule,
     LoginRoutingModule,
   ],
 })

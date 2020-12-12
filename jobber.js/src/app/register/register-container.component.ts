@@ -1,16 +1,16 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { Register } from "./register.interface";
 import { finalize } from "rxjs/operators";
-import {
-  selectRegisterError,
-  selectIsLoading,
-} from "../../../login/store/login-selectors";
-import { AppState } from "../../store/state/state";
+import { AppState } from "../core/store/state/state";
 import {
   RegisterClearError,
   RegisterRequestAction,
-} from "../../../login/store/login-actions";
+} from "./store/register-actions";
+import {
+  selectIsLoading,
+  selectRegisterError,
+} from "./store/register-selectors";
+import { Register } from "./register.interface";
 
 @Component({
   selector: "app-register-container",

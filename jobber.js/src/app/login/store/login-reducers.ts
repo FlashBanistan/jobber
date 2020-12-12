@@ -32,29 +32,6 @@ export function loginReducers(
       };
     case LoginActionTypes.LOGOUT_REQUEST:
       return initialLoginState;
-    case LoginActionTypes.REGISTER_REQUEST:
-      return {
-        ...state,
-        registerError: null,
-        isLoading: true,
-      };
-    case LoginActionTypes.REGISTER_FAILURE:
-      return {
-        ...state,
-        registerError: action.payload.error,
-        isLoading: false,
-      };
-    case LoginActionTypes.REGISTER_SUCCESS:
-      return {
-        ...state,
-        registerError: null,
-        isLoading: false,
-      };
-    case LoginActionTypes.REGISTER_CLEAR_ERROR:
-      return {
-        ...state,
-        registerError: null,
-      };
     default: {
       return state;
     }

@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LandingContainerComponent } from "./core/components/landing/landing-container.component";
-import { RegisterContainerComponent } from "./core/components/register/register-container.component";
 
 const routes: Routes = [
   {
@@ -15,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: "account/register",
-    component: RegisterContainerComponent,
+    loadChildren: () =>
+      import("./register/register.module").then((m) => m.RegisterModule),
   },
   {
     path: "jobs",

@@ -9,6 +9,7 @@ export function defaultReducer<T>(state: T) {
 
 export const appReducers: ActionReducerMap<AppState> = {
   login: defaultReducer,
+  register: defaultReducer,
   layout: layoutReducers,
   jobSearch: jobSearchReducers,
 };

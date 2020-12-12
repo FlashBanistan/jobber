@@ -4,8 +4,6 @@ import { LoginState } from "./login-state";
 
 const getLoginError = (state: LoginState) => state.loginError;
 
-const getRegisterError = (state: LoginState) => state.registerError;
-
 const getIsLoading = (state: LoginState) => state.isLoading;
 
 const getToken = (state: LoginState) => state.token;
@@ -18,11 +16,6 @@ const getUserFromToken = (state: LoginState) =>
 export const selectLoginState = createFeatureSelector<LoginState>("login");
 
 export const selectLoginError = createSelector(selectLoginState, getLoginError);
-
-export const selectRegisterError = createSelector(
-  selectLoginState,
-  getRegisterError
-);
 
 export const selectIsLoading = createSelector(selectLoginState, getIsLoading);
 
