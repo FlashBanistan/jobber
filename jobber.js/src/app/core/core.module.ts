@@ -14,6 +14,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { RegisterSuccessDialogComponent } from "./components";
 import { appReducers } from "./store/reducers/reducers";
 import { JobSearchEffects } from "./store/effects/job-search-effects";
+import { initialAppState } from "./store/state/state";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { JobSearchEffects } from "./store/effects/job-search-effects";
     LandingComponent,
   ],
   imports: [
-    StoreModule.forRoot(appReducers),
+    StoreModule.forRoot(appReducers, { initialState: initialAppState }),
     EffectsModule.forRoot([JobSearchEffects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
