@@ -1,6 +1,10 @@
 <mat-toolbar class="header" color="primary">
   <div class="header-items">
-    <button *ngIf="isMobileView$ | async" mat-icon-button (click)="toggleDrawer()">
+    <button
+      *ngIf="isMobileView$ | async"
+      mat-icon-button
+      (click)="toggleDrawer()"
+    >
       <mat-icon aria-label="Toggle sidenav">menu</mat-icon>
     </button>
     <span class="pointer" routerLink="/">Jobber</span>
@@ -19,11 +23,13 @@
         </ng-container>
 
         <ng-template #loggedIn>
-          <button mat-menu-item color="accent" (click)="logout()">Logout</button>
+          <button mat-menu-item color="accent" (click)="logout()">
+            Logout
+          </button>
         </ng-template>
 
         <ng-container>
-          <button mat-menu-item color="accent">
+          <button mat-menu-item color="accent" routerLink="/resume">
             <mat-icon>cloud_upload</mat-icon>
             Upload Resume
           </button>
@@ -42,7 +48,7 @@
       </ng-template>
 
       <ng-container>
-        <button mat-button color="accent">
+        <button mat-button color="accent" routerLink="/resume">
           <mat-icon>cloud_upload</mat-icon>
           Upload Resume
         </button>

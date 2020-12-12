@@ -22,6 +22,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/job-posting/job-posting.module').then(m => m.JobPostingModule),
   },
+  {
+    path: 'resume',
+    loadChildren: () =>
+      import('./features/resume/resume.module').then(m => m.ResumeModule),
+  }
 ];
 
 @NgModule({
