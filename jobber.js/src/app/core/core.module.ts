@@ -9,19 +9,14 @@ import { SharedModule } from "../shared/shared.module";
 import { environment } from "../../environments/environment";
 import { LandingContainerComponent } from "./components/landing/landing-container.component";
 import { LandingComponent } from "./components/landing/landing.component";
-import { LoginContainerComponent } from "./components/login/login-container.component";
-import { LoginComponent } from "./components/login/login.component";
 import { RegisterContainerComponent } from "./components/register/register-container.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { RegisterSuccessDialogComponent } from "./components";
-import { AuthEffects } from "./store/effects/auth-effects";
 import { appReducers } from "./store/reducers/reducers";
 import { JobSearchEffects } from "./store/effects/job-search-effects";
 
 @NgModule({
   declarations: [
-    LoginContainerComponent,
-    LoginComponent,
     RegisterContainerComponent,
     RegisterComponent,
     RegisterSuccessDialogComponent,
@@ -30,7 +25,7 @@ import { JobSearchEffects } from "./store/effects/job-search-effects";
   ],
   imports: [
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([AuthEffects, JobSearchEffects]),
+    EffectsModule.forRoot([JobSearchEffects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

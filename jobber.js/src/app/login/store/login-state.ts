@@ -1,13 +1,13 @@
-import { Token } from 'src/app/core/models';
+import { Token } from "../token.interface";
 
-export interface Authentication {
+export interface LoginState {
   token: Token;
   isLoading: boolean;
   loginError: string;
   registerError: string;
 }
 
-export const initialAuthenticationState: Authentication = {
+export const initialLoginState: LoginState = {
   token: null,
   isLoading: false,
   loginError: null,

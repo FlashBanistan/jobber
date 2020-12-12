@@ -1,13 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Login } from './login.interface';
-import { finalize } from 'rxjs/operators';
-import { selectLoginError, selectIsLoading } from '../../store/selectors/auth-selectors';
-import { AppState } from '../../store/state/state';
-import { LoginClearError, LoginRequestAction } from '../../store/actions/auth-actions';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Login } from "./login.interface";
+import { finalize } from "rxjs/operators";
+import { selectLoginError, selectIsLoading } from "./store/login-selectors";
+import { AppState } from "../core/store/state/state";
+import { LoginClearError, LoginRequestAction } from "./store/login-actions";
 
 @Component({
-  selector: 'app-login-container',
+  selector: "app-login-container",
   template: `
     <app-login
       [error]="error$ | async"

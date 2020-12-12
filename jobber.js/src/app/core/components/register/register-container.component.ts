@@ -1,13 +1,19 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Register } from './register.interface';
-import { finalize } from 'rxjs/operators';
-import { selectRegisterError, selectIsLoading } from '../../store/selectors/auth-selectors';
-import { AppState } from '../../store/state/state';
-import { RegisterClearError, RegisterRequestAction } from '../../store/actions/auth-actions';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Register } from "./register.interface";
+import { finalize } from "rxjs/operators";
+import {
+  selectRegisterError,
+  selectIsLoading,
+} from "../../../login/store/login-selectors";
+import { AppState } from "../../store/state/state";
+import {
+  RegisterClearError,
+  RegisterRequestAction,
+} from "../../../login/store/login-actions";
 
 @Component({
-  selector: 'app-register-container',
+  selector: "app-register-container",
   template: `
     <app-register
       [error]="error$ | async"

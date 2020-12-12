@@ -5,15 +5,15 @@ import {
   EventEmitter,
   OnInit,
   Input,
-} from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Register } from '../register/register.interface';
-import { MustMatch } from 'src/app/core/validators';
+} from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Register } from "../register/register.interface";
+import { MustMatch } from "src/app/core/validators";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['../login/login.component.scss'],
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnInit {
@@ -31,15 +31,15 @@ export class RegisterComponent implements OnInit {
   buildForm() {
     this.registerForm = this.fb.group(
       {
-        email: ['', [Validators.required, Validators.email]],
-        first_name: [''],
-        last_name: [''],
-        password: ['', [Validators.required, Validators.minLength(8)]],
-        confirm_password: [''],
+        email: ["", [Validators.required, Validators.email]],
+        first_name: [""],
+        last_name: [""],
+        password: ["", [Validators.required, Validators.minLength(8)]],
+        confirm_password: [""],
       },
       {
-        validator: MustMatch('password', 'confirm_password'),
-      },
+        validator: MustMatch("password", "confirm_password"),
+      }
     );
   }
 }
