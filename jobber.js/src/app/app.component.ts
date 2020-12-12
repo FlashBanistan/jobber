@@ -3,7 +3,7 @@ import { Store } from "@ngrx/store";
 import { selectLoggedIn } from "./login/store/login-selectors";
 import { AppState } from "./core/store/state/state";
 import { LogoutRequestAction } from "./login/store/login-actions";
-import { LayoutService } from "./core/services";
+import { LayoutService } from "./shared/services/layout.service";
 import { selectIsMobile } from "./core/store/selectors/layout-selectors";
 import { ToggleSidenavAction } from "./core/store/actions/layout.actions";
 

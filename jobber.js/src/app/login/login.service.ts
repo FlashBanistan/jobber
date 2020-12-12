@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { ApiService } from "src/app/core/services";
+import { ApiService } from "../shared/services/api.service";
 import { Login } from "./login.interface";
 import { Token } from "./token.interface";
 
