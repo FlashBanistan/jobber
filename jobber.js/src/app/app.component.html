@@ -1,4 +1,4 @@
-<mat-toolbar class="header" color="primary">
+<mat-toolbar class="header">
   <div class="header-items">
     <button
       *ngIf="isMobileView$ | async"
@@ -7,7 +7,7 @@
     >
       <mat-icon aria-label="Toggle sidenav">menu</mat-icon>
     </button>
-    <span class="pointer" routerLink="/">Jobber</span>
+    <!-- <span class="pointer" routerLink="/">Jobber</span> -->
   </div>
   <div class="header-items">
     <ng-container *ngIf="isMobileView$ | async; else desktopView">

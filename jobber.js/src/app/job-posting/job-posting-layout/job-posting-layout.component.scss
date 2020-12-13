@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .sidenav-container {
   position: absolute;
   top: 64px;
@@ -9,6 +11,7 @@
 
 .sidenav {
   width: 200px;
+  background-color: $background;
 }
 
 .sidenav-content {
