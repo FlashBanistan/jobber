@@ -1,10 +1,19 @@
 .vertical-direction {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .mobile-search-container {
   width: 100% !important;
+}
+
+.logo {
+  width: 25%;
+}
+
+.logo-mobile {
+  width: 50%;
 }
 
 .highlights-container-start {

@@ -10,7 +10,10 @@
         [matAutocomplete]="jobTitleAuto"
       />
       <mat-autocomplete autoActiveFirstOption #jobTitleAuto="matAutocomplete">
-        <mat-option *ngFor="let jobTitle of suggestedJobTitles" [value]="jobTitle">
+        <mat-option
+          *ngFor="let jobTitle of suggestedJobTitles"
+          [value]="jobTitle"
+        >
           {{ jobTitle }}
         </mat-option>
       </mat-autocomplete>
@@ -31,8 +34,11 @@
         [displayWith]="locationDisplayFn"
         (optionSelected)="onLocationSelected($event)"
       >
-        <mat-option *ngFor="let location of suggestedLocations" [value]="location">
-          {{ location.city + ', ' + location.state }}
+        <mat-option
+          *ngFor="let location of suggestedLocations"
+          [value]="location"
+        >
+          {{ location.city + ", " + location.state }}
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>

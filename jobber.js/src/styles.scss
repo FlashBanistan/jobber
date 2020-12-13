@@ -1,5 +1,6 @@
-@import '~normalize.css';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~normalize.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./assets/styles/material-overrides/index.scss";
 
 html,
 body {
@@ -8,7 +9,7 @@ body {
 body {
   background-color: #fafafa;
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
 }
 
@@ -40,7 +41,7 @@ input:-webkit-autofill:active {
 
 /* Transparent Overlay */
 .loading-indicator:before {
-  content: '';
+  content: "";
   display: block;
   position: fixed;
   top: 0;
