@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { selectLoggedIn } from "./login/store/login-selectors";
-import { AppState } from "./core/store/state/state";
+import { AppState } from "./store/state/state";
 import { LogoutRequestAction } from "./login/store/login-actions";
 import { LayoutService } from "./shared/services/layout.service";
-import { selectIsMobile } from "./core/store/selectors/layout-selectors";
-import { ToggleSidenavAction } from "./core/store/actions/layout.actions";
+import { selectIsMobile } from "./store/selectors/layout-selectors";
+import { ToggleSidenavAction } from "./store/actions/layout.actions";
 
 @Component({
   selector: "app-root",

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ApiService } from "../shared/services/api.service";
-import { JobPosting } from "src/app/core/models";
+import { JobPosting } from "./job-posting";
 import { Params } from "@angular/router";
 
 @Injectable({

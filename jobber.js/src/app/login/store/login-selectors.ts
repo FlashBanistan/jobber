@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { decodeJwt } from "src/app/core/functions";
+import { decodeJwt } from "../../shared/functions/decode-jwt";
 import { LoginState } from "./login-state";
 
 const getLoginError = (state: LoginState) => state.loginError;

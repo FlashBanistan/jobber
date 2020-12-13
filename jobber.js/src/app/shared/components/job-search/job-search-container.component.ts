@@ -1,22 +1,23 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/core/store/state/state';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { AppState } from "../../../store/state/state";
 import {
   selectJobTitleSuggestions,
   selectLocationSuggestions,
-} from 'src/app/core/store/selectors/job-search-selectors';
+} from "../../../store/selectors/job-search-selectors";
 import {
   JobTitleSuggestionsAction,
   LocationSuggestionsAction,
   SearchJobsAction,
   LocationSelectedAction,
-} from 'src/app/core/store/actions/job-search-actions';
-import { Location, JobSearchCriteria } from 'src/app/core/models';
-import { selectIsMobile } from 'src/app/core/store/selectors/layout-selectors';
+} from "../../../store/actions/job-search-actions";
+import { Location } from "../../interfaces/location";
+import { selectIsMobile } from "../../../store/selectors/layout-selectors";
+import { JobSearchCriteria } from "./job-search-criteria";
 
 @Component({
-  selector: 'app-job-search-container',
+  selector: "app-job-search-container",
   template: `
     <app-job-search
       style="width: 100%"

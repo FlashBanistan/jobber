@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { ResumeRoutingModule } from './resume-routing.module';
-import { ResumeLayoutComponent } from './resume-layout/resume-layout.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ResumeRoutingModule } from "./resume-routing.module";
+import { ResumeLayoutComponent } from "./resume-layout/resume-layout.component";
+import { MaterialModule } from "../shared/material.module";
 
 @NgModule({
-  declarations: [
-    ResumeLayoutComponent,
-  ],
-  imports: [SharedModule, ResumeRoutingModule],
+  declarations: [ResumeLayoutComponent],
+  imports: [CommonModule, MaterialModule, ResumeRoutingModule],
   providers: [],
 })
 export class ResumeModule {}

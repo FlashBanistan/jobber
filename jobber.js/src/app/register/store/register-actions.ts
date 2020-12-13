@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { User } from "src/app/core/models";
+import { User } from "../../shared/interfaces/user";
 import { Register } from "../register.interface";
 
 export enum RegisterActionTypes {

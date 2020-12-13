@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { finalize } from "rxjs/operators";
-import { AppState } from "../core/store/state/state";
+import { AppState } from "../store/state/state";
 import {
   RegisterClearError,
   RegisterRequestAction,

@@ -6,17 +6,17 @@ import {
   EventEmitter,
   OnDestroy,
   ChangeDetectionStrategy,
-} from '@angular/core';
-import { Location } from 'src/app/core/models';
-import { FormControl } from '@angular/forms';
-import { takeUntil, debounceTime } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+} from "@angular/core";
+import { Location } from "../../interfaces/location";
+import { FormControl } from "@angular/forms";
+import { takeUntil, debounceTime } from "rxjs/operators";
+import { Subject } from "rxjs";
+import { MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
 
 @Component({
-  selector: 'app-job-search',
-  templateUrl: './job-search.component.html',
-  styleUrls: ['./job-search.component.scss'],
+  selector: "app-job-search",
+  templateUrl: "./job-search.component.html",
+  styleUrls: ["./job-search.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JobSearchComponent implements OnInit, OnDestroy {
@@ -40,20 +40,14 @@ export class JobSearchComponent implements OnInit, OnDestroy {
 
   subscribeToJobTitle() {
     this.jobTitle$.valueChanges
-      .pipe(
-        takeUntil(this.ngUnsubscribe$),
-        debounceTime(400),
-      )
-      .subscribe(value => this.jobTitleValue.emit(value));
+      .pipe(takeUntil(this.ngUnsubscribe$), debounceTime(400))
+      .subscribe((value) => this.jobTitleValue.emit(value));
   }
 
   subscribeToLocation() {
     this.location$.valueChanges
-      .pipe(
-        takeUntil(this.ngUnsubscribe$),
-        debounceTime(400),
-      )
-      .subscribe(value => this.locationValue.emit(value));
+      .pipe(takeUntil(this.ngUnsubscribe$), debounceTime(400))
+      .subscribe((value) => this.locationValue.emit(value));
   }
 
   onLocationSelected(event: MatAutocompleteSelectedEvent) {
@@ -68,7 +62,7 @@ export class JobSearchComponent implements OnInit, OnDestroy {
   }
 
   locationDisplayFn(location: Location) {
-    return location ? location.city + ', ' + location.state : null;
+    return location ? location.city + ", " + location.state : null;
   }
 
   ngOnDestroy() {

@@ -8,7 +8,7 @@ import {
 } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Register } from "../register/register.interface";
-import { MustMatch } from "src/app/core/validators";
+import { MustMatch } from "../shared/validators/must-match-validator";
 
 @Component({
   selector: "app-register",

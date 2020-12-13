@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ApiService } from "./api.service";
-import { PaginatedLocationSuggestion } from "../../core/models";
+import { PaginatedLocationSuggestion } from "../../shared/interfaces/paginated-location-suggestion";
 
 @Injectable({
   providedIn: "root",

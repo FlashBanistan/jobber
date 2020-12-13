@@ -9,5 +9,5 @@ export const initialLayoutState: Layout = {
   sidenavOpened: true,
   isMobile: false,
   isJobDetailView: false,
-  sidenavMode: 'side',
+  sidenavMode: "side",
 };

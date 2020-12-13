@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { AppState } from "../core/store/state/state";
-import { selectIsMobile } from "../core/store/selectors/layout-selectors";
+import { AppState } from "../store/state/state";
+import { selectIsMobile } from "../store/selectors/layout-selectors";
 
 @Component({
   selector: "app-landing-container",

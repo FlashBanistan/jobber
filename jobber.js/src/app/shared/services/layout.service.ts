@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Store } from "@ngrx/store";
-import { AppState } from "../../core/store/state/state";
+import { AppState } from "../../store/state/state";
 import {
   InitializeMobileViewAction,
   InitializeDesktopViewAction,
-} from "../../core/store/actions/layout.actions";
+} from "../../store/actions/layout.actions";
 
 @Injectable({
   providedIn: "root",

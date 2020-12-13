@@ -1,18 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/core/store/state/state';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { AppState } from "../../store/state/state";
 import {
   selectIsMobile,
   selectSidenavOpened,
   selectSidenavMode,
   selectIsJobDetailView,
-} from 'src/app/core/store/selectors/layout-selectors';
-import { ActivatedRoute } from '@angular/router';
+} from "../../store/selectors/layout-selectors";
 
 @Component({
-  selector: 'app-job-posting-layout',
-  templateUrl: './job-posting-layout.component.html',
-  styleUrls: ['./job-posting-layout.component.scss'],
+  selector: "app-job-posting-layout",
+  templateUrl: "./job-posting-layout.component.html",
+  styleUrls: ["./job-posting-layout.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JobPostingLayoutComponent implements OnInit {

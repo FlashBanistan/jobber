@@ -5,7 +5,7 @@ import { Observable, of } from "rxjs";
 import { catchError, map, switchMap, tap } from "rxjs/operators";
 import * as jobSearchActions from "../actions/job-search-actions";
 import { Router, ActivatedRoute } from "@angular/router";
-import { SuggestionService } from "../../../shared/services/suggestion.service";
+import { SuggestionService } from "../../shared/services/suggestion.service";
 
 @Injectable()
 export class JobSearchEffects {

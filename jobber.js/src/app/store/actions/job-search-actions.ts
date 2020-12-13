@@ -1,17 +1,19 @@
-import { Action } from '@ngrx/store';
-import { Location, JobPosting, JobSearchCriteria } from '../../models';
+import { Action } from "@ngrx/store";
+import { JobSearchCriteria } from "../../shared/components/job-search/job-search-criteria";
+import { JobPosting } from "../../job-posting/job-posting";
+import { Location } from "../../shared/interfaces/location";
 
 export enum JobSearchActionTypes {
-  JOB_TITLE_SUGGESTIONS = '[Job Search] Job Title Suggestions',
-  JOB_TITLE_SUGGESTIONS_FAILURE = '[Job Search] Job Title Suggestions Failure',
-  JOB_TITLE_SUGGESTIONS_SUCCESS = '[Job Search] Job Title Suggestions Success',
-  LOCATION_SUGGESTIONS = '[Job Search] Job Location Suggestions',
-  LOCATION_SUGGESTIONS_FAILURE = '[Job Search] Location Suggestions Failure',
-  LOCATION_SUGGESTIONS_SUCCESS = '[Job Search] Location Suggestions Success',
-  LOCATION_SELECTED = '[Job Search] Location Selected',
-  SEARCH_JOBS = '[Job Search] Search Jobs',
-  SEARCH_JOBS_FAILURE = '[Job Search] Search Jobs Failure',
-  SEARCH_JOBS_SUCCESS = '[Job Search] Search Jobs Success',
+  JOB_TITLE_SUGGESTIONS = "[Job Search] Job Title Suggestions",
+  JOB_TITLE_SUGGESTIONS_FAILURE = "[Job Search] Job Title Suggestions Failure",
+  JOB_TITLE_SUGGESTIONS_SUCCESS = "[Job Search] Job Title Suggestions Success",
+  LOCATION_SUGGESTIONS = "[Job Search] Job Location Suggestions",
+  LOCATION_SUGGESTIONS_FAILURE = "[Job Search] Location Suggestions Failure",
+  LOCATION_SUGGESTIONS_SUCCESS = "[Job Search] Location Suggestions Success",
+  LOCATION_SELECTED = "[Job Search] Location Selected",
+  SEARCH_JOBS = "[Job Search] Search Jobs",
+  SEARCH_JOBS_FAILURE = "[Job Search] Search Jobs Failure",
+  SEARCH_JOBS_SUCCESS = "[Job Search] Search Jobs Success",
 }
 
 export class JobTitleSuggestionsAction implements Action {
