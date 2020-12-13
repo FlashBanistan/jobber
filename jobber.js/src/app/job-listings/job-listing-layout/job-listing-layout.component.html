@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    class="sidenav"
+    [mode]="drawerMode$ | async"
+    [opened]="drawerOpened$ | async"
+  >
+    <app-job-listing-filters-container></app-job-listing-filters-container>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <app-job-search-container
+      class="job-search-container"
+    ></app-job-search-container>
+    <div class="job-list-details-container">
+      <app-job-listing-list-container
+        class="job-list-container"
+        [style.margin-right.px]="(isMobileView$ | async) ? 0 : 10"
+        [hidden]="(isMobileView$ | async) && (isJobDetailView | async)"
+      ></app-job-listing-list-container>
+      <app-job-listing-detail-container
+        class="job-detail-container"
+        [hidden]="(isMobileView$ | async) && !(isJobDetailView | async)"
+      ></app-job-listing-detail-container>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

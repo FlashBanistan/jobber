@@ -20,8 +20,8 @@ const routes: Routes = [
   {
     path: "jobs",
     loadChildren: () =>
-      import("./job-posting/job-posting.module").then(
-        (m) => m.JobPostingModule
+      import("./job-listings/job-listing.module").then(
+        (m) => m.JobListingModule
       ),
   },
   {
