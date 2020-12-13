@@ -10,6 +10,7 @@ import { JobPostingDetailComponent } from "./job-posting-detail/job-posting-deta
 import { JobPostingDetailContainerComponent } from "./job-posting-detail/job-posting-detail-container.component";
 import { JobResolver } from "./job-resolver";
 import { MaterialModule } from "../shared/material.module";
+import { JobSearchModule } from "../shared/components/job-search/job-search.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,12 @@ import { MaterialModule } from "../shared/material.module";
     JobPostingDetailContainerComponent,
     JobPostingDetailComponent,
   ],
-  imports: [SharedModule, MaterialModule, JobPostingRoutingModule],
+  imports: [
+    SharedModule,
+    MaterialModule,
+    JobPostingRoutingModule,
+    JobSearchModule,
+  ],
   providers: [JobResolver],
 })
 export class JobPostingModule {}

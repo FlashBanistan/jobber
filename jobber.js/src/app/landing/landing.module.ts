@@ -4,10 +4,11 @@ import { MaterialModule } from "../shared/material.module";
 import { LandingContainerComponent } from "../landing/landing-container.component";
 import { LandingComponent } from "../landing/landing.component";
 import { SharedModule } from "../shared/shared.module";
+import { JobSearchModule } from "../shared/components/job-search/job-search.module";
 
 @NgModule({
   declarations: [LandingContainerComponent, LandingComponent],
-  imports: [CommonModule, SharedModule, MaterialModule],
+  imports: [CommonModule, SharedModule, MaterialModule, JobSearchModule],
   exports: [],
   providers: [],
 })
