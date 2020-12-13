@@ -1,10 +1,10 @@
-import { JobSearch, initialJobSearchState } from '../state/job-search-state';
-import { JobSearchActions, JobSearchActionTypes } from '../actions/job-search-actions';
+import { JobSearchState, initialJobSearchState } from "./job-search-state";
+import { JobSearchActions, JobSearchActionTypes } from "./job-search-actions";
 
 export function jobSearchReducers(
   state = initialJobSearchState,
-  action: JobSearchActions,
-): JobSearch {
+  action: JobSearchActions
+): JobSearchState {
   switch (action.type) {
     case JobSearchActionTypes.JOB_TITLE_SUGGESTIONS:
       return {
@@ -55,13 +55,6 @@ export function jobSearchReducers(
           ...state.jobSearchCriteria,
           location: action.payload.location,
         },
-      };
-    case JobSearchActionTypes.SEARCH_JOBS:
-      return {
-        ...state,
-        jobSearchCriteria: action.payload,
-        error: null,
-        isLoading: true,
       };
     default: {
       return state;

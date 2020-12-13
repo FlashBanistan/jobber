@@ -5,13 +5,12 @@ import { AppState } from "../../../store/state/state";
 import {
   selectJobTitleSuggestions,
   selectLocationSuggestions,
-} from "../../../store/selectors/job-search-selectors";
+} from "./store/job-search-selectors";
 import {
   JobTitleSuggestionsAction,
   LocationSuggestionsAction,
-  SearchJobsAction,
   LocationSelectedAction,
-} from "../../../store/actions/job-search-actions";
+} from "./store/job-search-actions";
 import { Location } from "../../interfaces/location";
 import { selectIsMobile } from "../../../store/selectors/layout-selectors";
 import { JobSearchCriteria } from "./job-search-criteria";
@@ -65,7 +64,6 @@ export class JobSearchContainerComponent implements OnInit {
         longitude: jobSearchCriteria.location.longitude,
       },
     };
-    this.store.dispatch(new SearchJobsAction(queryParams));
 
     // this.router.navigate(['/jobs'], {
     //   queryParams: {

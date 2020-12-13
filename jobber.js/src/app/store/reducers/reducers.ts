@@ -1,6 +1,6 @@
 import { ActionReducerMap } from "@ngrx/store";
 import { AppState } from "../state/state";
-import { jobSearchReducers } from "./job-search-reducers";
+import { jobPostingReducers } from "./job-posting-reducers";
 import { layoutReducers } from "./layout-reducers";
 
 export function defaultReducer<T>(state: T) {
@@ -11,5 +11,5 @@ export const appReducers: ActionReducerMap<AppState> = {
   login: defaultReducer,
   register: defaultReducer,
   layout: layoutReducers,
-  jobSearch: jobSearchReducers,
+  jobPosting: jobPostingReducers,
 };

@@ -2,17 +2,14 @@ import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType } from "@ngrx/effects";
 import { Action } from "@ngrx/store";
 import { Observable, of } from "rxjs";
-import { catchError, map, switchMap, tap } from "rxjs/operators";
-import * as jobSearchActions from "../actions/job-search-actions";
-import { Router, ActivatedRoute } from "@angular/router";
-import { SuggestionService } from "../../shared/services/suggestion.service";
+import { catchError, map, switchMap } from "rxjs/operators";
+import * as jobSearchActions from "./job-search-actions";
+import { SuggestionService } from "../../../services/suggestion.service";
 
 @Injectable()
 export class JobSearchEffects {
   constructor(
     private suggestionService: SuggestionService,
-    private router: Router,
-    private route: ActivatedRoute,
     private actions$: Actions
   ) {}
 
@@ -54,24 +51,5 @@ export class JobSearchEffects {
         )
       )
     )
-  );
-
-  @Effect({ dispatch: false })
-  JobSearchRequestEffect$ = this.actions$.pipe(
-    ofType<jobSearchActions.SearchJobsAction>(
-      jobSearchActions.JobSearchActionTypes.SEARCH_JOBS
-    ),
-    map((action: jobSearchActions.SearchJobsAction) => action.payload),
-    tap((payload) => {
-      const { jobTitle, location } = payload;
-      this.router.navigate(["/jobs"], {
-        relativeTo: this.route,
-        queryParams: {
-          jobTitle,
-          ...location,
-        },
-        queryParamsHandling: "merge",
-      });
-    })
   );
 }

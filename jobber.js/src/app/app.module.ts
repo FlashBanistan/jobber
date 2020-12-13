@@ -8,7 +8,6 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "src/environments/environment";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { JobSearchEffects } from "./store/effects/job-search-effects";
 import { appReducers } from "./store/reducers/reducers";
 import { initialAppState } from "./store/state/state";
 import { LandingModule } from "./landing/landing.module";
@@ -22,7 +21,7 @@ import { SharedModule } from "./shared/shared.module";
     BrowserAnimationsModule,
     AppRoutingModule,
     StoreModule.forRoot(appReducers, { initialState: initialAppState }),
-    EffectsModule.forRoot([JobSearchEffects]),
+    EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

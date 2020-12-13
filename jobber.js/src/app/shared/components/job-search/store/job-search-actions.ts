@@ -1,7 +1,5 @@
 import { Action } from "@ngrx/store";
-import { JobSearchCriteria } from "../../shared/components/job-search/job-search-criteria";
-import { JobPosting } from "../../job-posting/job-posting";
-import { Location } from "../../shared/interfaces/location";
+import { Location } from "../../../interfaces/location";
 
 export enum JobSearchActionTypes {
   JOB_TITLE_SUGGESTIONS = "[Job Search] Job Title Suggestions",
@@ -11,9 +9,6 @@ export enum JobSearchActionTypes {
   LOCATION_SUGGESTIONS_FAILURE = "[Job Search] Location Suggestions Failure",
   LOCATION_SUGGESTIONS_SUCCESS = "[Job Search] Location Suggestions Success",
   LOCATION_SELECTED = "[Job Search] Location Selected",
-  SEARCH_JOBS = "[Job Search] Search Jobs",
-  SEARCH_JOBS_FAILURE = "[Job Search] Search Jobs Failure",
-  SEARCH_JOBS_SUCCESS = "[Job Search] Search Jobs Success",
 }
 
 export class JobTitleSuggestionsAction implements Action {
@@ -51,21 +46,6 @@ export class LocationSelectedAction implements Action {
   constructor(public payload: { location: Location }) {}
 }
 
-export class SearchJobsAction implements Action {
-  readonly type = JobSearchActionTypes.SEARCH_JOBS;
-  constructor(public payload: JobSearchCriteria) {}
-}
-
-export class SearchJobsFailureAction implements Action {
-  readonly type = JobSearchActionTypes.SEARCH_JOBS_FAILURE;
-  constructor(public payload: { error: string }) {}
-}
-
-export class SearchJobsSuccessAction implements Action {
-  readonly type = JobSearchActionTypes.SEARCH_JOBS_SUCCESS;
-  constructor(public payload: { jobs: JobPosting[] }) {}
-}
-
 export type JobSearchActions =
   | JobTitleSuggestionsAction
   | JobTitleSuggestionsFailureAction
@@ -73,7 +53,4 @@ export type JobSearchActions =
   | LocationSuggestionsAction
   | LocationSuggestionsFailureAction
   | LocationSuggestionsSuccessAction
-  | LocationSelectedAction
-  | SearchJobsAction
-  | SearchJobsFailureAction
-  | SearchJobsSuccessAction;
+  | LocationSelectedAction;
