@@ -1,6 +1,6 @@
-<mat-card class="listing-detail-container">
+<mat-card *ngIf="jobListing" class="listing-detail-container">
   <mat-card-header>
-    <mat-card-title>Job Detail</mat-card-title>
+    <mat-card-title>{{ jobListing.title }}</mat-card-title>
     <mat-card-subtitle>subtitle</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content> </mat-card-content>

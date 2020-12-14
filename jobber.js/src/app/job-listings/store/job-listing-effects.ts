@@ -5,7 +5,7 @@ import { map, tap } from "rxjs/operators";
 import * as jobListingActions from "./job-listing-actions";
 
 @Injectable()
-export class JobSearchEffects {
+export class JobListingEffects {
   constructor(
     private router: Router,
     private route: ActivatedRoute,

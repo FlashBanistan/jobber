@@ -6,6 +6,7 @@ export enum JobListingActionTypes {
   SEARCH_JOBS = "[Job Listing] Search Jobs",
   SEARCH_JOBS_FAILURE = "[Job Listing] Search Jobs Failure",
   SEARCH_JOBS_SUCCESS = "[Job Listing] Search Jobs Success",
+  SELECT_JOB_LISTING = "[Job Listing] Select Job Listing",
 }
 
 export class SearchJobsAction implements Action {
@@ -20,10 +21,16 @@ export class SearchJobsFailureAction implements Action {
 
 export class SearchJobsSuccessAction implements Action {
   readonly type = JobListingActionTypes.SEARCH_JOBS_SUCCESS;
-  constructor(public payload: { jobs: JobListing[] }) {}
+  constructor(public payload: JobListing[]) {}
+}
+
+export class SelectJobListing implements Action {
+  readonly type = JobListingActionTypes.SELECT_JOB_LISTING;
+  constructor(public payload: JobListing) {}
 }
 
 export type JobListingActions =
   | SearchJobsAction
   | SearchJobsFailureAction
-  | SearchJobsSuccessAction;
+  | SearchJobsSuccessAction
+  | SelectJobListing;

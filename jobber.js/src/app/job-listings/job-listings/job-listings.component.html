@@ -1,0 +1,11 @@
+<mat-card
+  matRipple
+  *ngFor="let job of jobListings"
+  (click)="selectJobListing.emit(job)"
+>
+  <mat-card-title>{{ job.title }}</mat-card-title>
+  <mat-card-subtitle>{{ job.company }}</mat-card-subtitle>
+  <mat-card-content>
+    <mat-card-subtitle>{{ job.location }}</mat-card-subtitle>
+  </mat-card-content>
+</mat-card>

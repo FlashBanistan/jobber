@@ -1,9 +1,13 @@
 import { NgModule } from "@angular/core";
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
 import { SharedModule } from "src/app/shared/shared.module";
 import { JobListingRoutingModule } from "./job-listing-routing.module";
+import { jobListingReducers } from "./store/job-listing-reducers";
+import { JobListingEffects } from "./store/job-listing-effects";
 import { JobListingLayoutComponent } from "./job-listing-layout/job-listing-layout.component";
-import { JobListingListComponent } from "./job-listing-list/job-listing-list.component";
-import { JobListingListContainerComponent } from "./job-listing-list/job-listing-list-container.component";
+import { JobListingsContainerComponent } from "./job-listings/job-listings-container.component";
+import { JobListingsComponent } from "./job-listings/job-listings.component";
 import { JobListingFiltersComponent } from "./job-listing-filters/job-listing-filters.component";
 import { JobListingFiltersContainerComponent } from "./job-listing-filters/job-listing-filters-container.component";
 import { JobListingDetailComponent } from "./job-listing-detail/job-listing-detail.component";
@@ -15,14 +19,16 @@ import { JobSearchModule } from "../shared/components/job-search/job-search.modu
 @NgModule({
   declarations: [
     JobListingLayoutComponent,
-    JobListingListContainerComponent,
-    JobListingListComponent,
+    JobListingsContainerComponent,
+    JobListingsComponent,
     JobListingFiltersContainerComponent,
     JobListingFiltersComponent,
     JobListingDetailContainerComponent,
     JobListingDetailComponent,
   ],
   imports: [
+    StoreModule.forFeature("jobListings", jobListingReducers),
+    EffectsModule.forFeature([JobListingEffects]),
     SharedModule,
     MaterialModule,
     JobListingRoutingModule,
