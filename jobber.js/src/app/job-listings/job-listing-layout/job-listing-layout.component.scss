@@ -16,17 +16,14 @@
 
 .sidenav-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px;
+  box-sizing: border-box;
+  height: calc(100vh - 74px);
 }
 
 .job-search-container {
   max-width: 400px;
-}
-
-.job-list-details-container {
-  display: flex;
-  flex-direction: row;
 }
 
 .job-list-container {
@@ -38,4 +35,7 @@
 .job-detail-container {
   flex-grow: 2;
   flex-basis: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
