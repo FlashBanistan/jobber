@@ -6,6 +6,7 @@ mat-sidenav-container.mat-sidenav-container {
   }
 
   mat-sidenav-content.mat-sidenav-content {
+    box-sizing: border-box;
     padding: 10px 20px;
     background-color: white;
   }
