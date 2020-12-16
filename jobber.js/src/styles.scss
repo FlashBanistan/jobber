@@ -1,3 +1,4 @@
+@import "~normalize.css";
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
@@ -35,7 +36,6 @@ $jobber-theme: mat-light-theme(
 // that you are using.
 @include angular-material-theme($jobber-theme);
 
-@import "~normalize.css";
 @import "./assets/styles/material-overrides/index.scss";
 
 html,

@@ -1,0 +1,14 @@
+section {
+  display: flex;
+  flex-direction: row;
+  div.icon {
+    display: flex;
+    padding: 0px 10px;
+    color: #707070;
+  }
+  div.header {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+  }
+}

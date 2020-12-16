@@ -1,3 +1,19 @@
-.container {
+mat-sidenav-container.mat-sidenav-container {
   height: 100%;
+
+  mat-sidenav.mat-sidenav {
+    width: 360px;
+  }
+
+  mat-sidenav-content.mat-sidenav-content {
+    padding: 10px 20px;
+    background-color: white;
+  }
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
 }
