@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { AppState } from "src/app/store/state/state";
-import { Resume } from "../resume.interface";
+import { Resume } from "../interfaces/resume.interface";
 
 @Component({
   selector: "app-contact-information-container",

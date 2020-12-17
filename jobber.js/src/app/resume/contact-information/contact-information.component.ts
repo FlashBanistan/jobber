@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Resume } from "../resume.interface";
+import { Resume } from "../interfaces/resume.interface";
 
 @Component({
   selector: "app-contact-information",

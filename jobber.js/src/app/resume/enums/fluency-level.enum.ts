@@ -1,0 +1,6 @@
+export enum FluencyLevel {
+  NOVICE = "NOVICE",
+  INTERMEDIATE = "INTERMEDIATE",
+  ADVANCED = "ADVANCED",
+  SUPERIOR = "SUPERIOR",
+}
