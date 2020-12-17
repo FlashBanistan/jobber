@@ -2,10 +2,10 @@ import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { selectLoggedIn } from "./login/store/login-selectors";
 import { AppState } from "./store/state/state";
-import { LogoutRequestAction } from "./login/store/login-actions";
 import { LayoutService } from "./shared/services/layout.service";
 import { selectIsMobile } from "./store/selectors/layout-selectors";
 import { ToggleSidenavAction } from "./store/actions/layout.actions";
+import { logout } from "./login/store/actions";
 
 @Component({
   selector: "app-root",
@@ -23,7 +23,7 @@ export class AppComponent {
   ) {}
 
   logout() {
-    this.store.dispatch(new LogoutRequestAction());
+    this.store.dispatch(logout());
   }
 
   toggleDrawer() {
