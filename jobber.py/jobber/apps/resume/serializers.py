@@ -127,7 +127,6 @@ class ResumeReadSerializer(FlexFieldsModelSerializer):
         fields = [
             'id',
             'user',
-            'title',
             'name',
             'label',
             'email',
@@ -178,7 +177,6 @@ class ResumeWriteSerializer(FlexFieldsModelSerializer):
         fields = [
             'id',
             'user',
-            'title',
             'name',
             'label',
             'email',

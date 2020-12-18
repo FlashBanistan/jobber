@@ -6,7 +6,6 @@ from jobber.apps.core.choices import LANGUAGES, STUDY_TYPES, MASTERY_LEVELS, FLU
 
 class Resume(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='resumes')
-    title = models.CharField(max_length=255, blank=True)
     name = models.CharField(max_length=255, blank=True)
     label = models.CharField(max_length=255, blank=True)
     email = models.EmailField(max_length=255, blank=True)
