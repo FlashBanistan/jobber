@@ -12,6 +12,7 @@ import { ResumeSectionComponent } from "./resume-section/resume-section.componen
 import { ResumeSectionHeaderComponent } from "./resume-section/resume-section-header/resume-section-header.component";
 import { ResumeSectionIconComponent } from "./resume-section/resume-section-icon/resume-section-icon.component";
 import { ResumeSectionContentComponent } from "./resume-section/resume-section-content/resume-section-content.component";
+import { AboutSectionModule } from "./about-section/about-section.module";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ResumeSectionContentComponent } from "./resume-section/resume-section-c
     MaterialModule,
     ResumeRoutingModule,
     ContactInformationModule,
+    AboutSectionModule,
   ],
   providers: [],
 })

@@ -24,5 +24,27 @@ export interface Resume {
   awards: Award[];
   publications: Publication[];
   skills: Skill[];
-  language: Language[];
+  languages: Language[];
 }
+
+export const getResume = (): Resume => {
+  return {
+    id: null,
+    user: null,
+    title: "",
+    name: "",
+    label: "",
+    email: "",
+    phone: "",
+    website: "",
+    summary: "",
+    profiles: [],
+    work: [],
+    volunteer: [],
+    education: [],
+    awards: [],
+    publications: [],
+    skills: [],
+    languages: [],
+  };
+};

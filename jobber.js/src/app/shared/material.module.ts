@@ -32,6 +32,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTreeModule } from "@angular/material/tree";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { TextFieldModule } from "@angular/cdk/text-field";
 
 @NgModule({
   exports: [
@@ -69,6 +70,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatProgressBarModule,
     MatButtonToggleModule,
     MatTooltipModule,
+    TextFieldModule,
   ],
 })
 export class MaterialModule {}

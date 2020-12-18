@@ -13,6 +13,7 @@ import { initialAppState } from "./store/state/state";
 import { LandingModule } from "./landing/landing.module";
 import { MaterialModule } from "./shared/material.module";
 import { SharedModule } from "./shared/shared.module";
+import { MaterialDefaultsModule } from "./shared/material-defaults.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { SharedModule } from "./shared/shared.module";
       maxAge: 25,
       logOnly: environment.production,
     }),
+    MaterialDefaultsModule,
     SharedModule,
     MaterialModule,
     LandingModule,
