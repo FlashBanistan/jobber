@@ -3,9 +3,10 @@ import { ResumeLocation } from "./resume-location.interface";
 
 export interface ResumeBasics {
   readonly id: number;
-  readonly user: number;
+  readonly resume: number;
   name: string;
   label: string;
+  picture: string;
   email: string;
   phone: string;
   website: string;

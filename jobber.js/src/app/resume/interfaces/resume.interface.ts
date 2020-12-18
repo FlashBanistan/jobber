@@ -18,6 +18,8 @@ export interface Resume {
   publications: Publication[];
   skills: Skill[];
   languages: Language[];
+  interests: any[];
+  references: any[];
 }
 
 export const getResume = (): Resume => {
@@ -26,9 +28,10 @@ export const getResume = (): Resume => {
     user: null,
     basics: {
       id: null,
-      user: null,
+      resume: null,
       name: "",
       label: "",
+      picture: "",
       email: "",
       phone: "",
       website: "",
@@ -49,5 +52,7 @@ export const getResume = (): Resume => {
     publications: [],
     skills: [],
     languages: [],
+    interests: [],
+    references: [],
   };
 };
