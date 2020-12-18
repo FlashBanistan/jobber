@@ -1,6 +1,6 @@
 export interface Publication {
-  id: number;
-  resume: number;
+  readonly id: number;
+  readonly resume: number;
   name: string;
   publisher: string;
   releaseDate: string;

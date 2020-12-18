@@ -1,6 +1,6 @@
 export interface Award {
-  id: number;
-  resume: number;
+  readonly id: number;
+  readonly resume: number;
   title: string;
   date: string;
   awarder: string;

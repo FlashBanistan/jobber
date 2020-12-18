@@ -1,23 +1,16 @@
 import { Award } from "./award.interface";
 import { Education } from "./education.interface";
 import { Language } from "./language.interface";
-import { OnlineProfile } from "./online-profile.interface";
 import { Publication } from "./publication.interface";
+import { ResumeBasics } from "./resume-basics.interface";
 import { Skill } from "./skill.interface";
 import { Volunteer } from "./volunteer.interface";
 import { Work } from "./work.interface";
 
 export interface Resume {
-  id: number;
-  user: number;
-  title: string;
-  name: string;
-  label: string;
-  email: string;
-  phone: string;
-  website: string;
-  summary: string;
-  profiles: OnlineProfile[];
+  readonly id: number;
+  readonly user: number;
+  basics: ResumeBasics;
   work: Work[];
   volunteer: Volunteer[];
   education: Education[];
@@ -31,14 +24,24 @@ export const getResume = (): Resume => {
   return {
     id: null,
     user: null,
-    title: "",
-    name: "",
-    label: "",
-    email: "",
-    phone: "",
-    website: "",
-    summary: "",
-    profiles: [],
+    basics: {
+      id: null,
+      user: null,
+      name: "",
+      label: "",
+      email: "",
+      phone: "",
+      website: "",
+      summary: "",
+      location: {
+        address: "",
+        postalCode: "",
+        city: "",
+        countryCode: "",
+        region: "",
+      },
+      profiles: [],
+    },
     work: [],
     volunteer: [],
     education: [],

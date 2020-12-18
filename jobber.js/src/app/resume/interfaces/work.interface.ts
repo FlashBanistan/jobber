@@ -1,6 +1,6 @@
 export interface Work {
-  id: number;
-  resume: number;
+  readonly id: number;
+  readonly resume: number;
   company: string;
   position: string;
   website: string;

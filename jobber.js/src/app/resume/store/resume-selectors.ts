@@ -3,7 +3,7 @@ import { ResumeState } from "./resume-state";
 
 const getIsLoading = (state: ResumeState) => state.isLoading;
 
-const getSummarySection = (state: ResumeState) => state.resume.summary;
+const getSummarySection = (state: ResumeState) => state.resume.basics.summary;
 
 const getIsEditingSummary = (state: ResumeState) => state.isEditingSummary;
 

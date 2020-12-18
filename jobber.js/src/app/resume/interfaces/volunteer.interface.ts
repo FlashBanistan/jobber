@@ -1,6 +1,6 @@
 export interface Volunteer {
-  id: number;
-  resume: number;
+  readonly id: number;
+  readonly resume: number;
   organization: string;
   position: string;
   website: string;

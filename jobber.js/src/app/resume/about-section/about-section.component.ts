@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from "@angular/core";
 
@@ -13,12 +12,9 @@ import {
   styleUrls: ["./about-section.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutSectionComponent implements OnInit {
+export class AboutSectionComponent {
   @Input() summary: string;
   @Input() editing: boolean;
   @Output() toggleEditing = new EventEmitter();
   @Output() saveField = new EventEmitter<string>();
-  constructor() {}
-
-  ngOnInit() {}
 }

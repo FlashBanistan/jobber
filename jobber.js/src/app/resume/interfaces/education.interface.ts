@@ -1,8 +1,8 @@
 import { StudyType } from "../enums/study-type.enum";
 
 export interface Education {
-  id: number;
-  resume: number;
+  readonly id: number;
+  readonly resume: number;
   institution: string;
   area: string;
   studyType: StudyType;
