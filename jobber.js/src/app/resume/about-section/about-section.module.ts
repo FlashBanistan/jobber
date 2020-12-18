@@ -4,10 +4,11 @@ import { AboutSectionContainerComponent } from "./about-section-container.compon
 import { AboutSectionComponent } from "./about-section.component";
 import { MaterialModule } from "../../shared/material.module";
 import { FormsModule } from "@angular/forms";
+import { A11yModule } from "@angular/cdk/a11y";
 
 @NgModule({
   declarations: [AboutSectionContainerComponent, AboutSectionComponent],
-  imports: [CommonModule, FormsModule, MaterialModule],
+  imports: [CommonModule, FormsModule, MaterialModule, A11yModule],
   exports: [AboutSectionContainerComponent],
 })
 export class AboutSectionModule {}

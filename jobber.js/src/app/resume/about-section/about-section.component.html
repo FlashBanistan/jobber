@@ -1,12 +1,18 @@
 <p *ngIf="!editing; else showEditor" (click)="toggleEditing.emit()">
   {{ summary }}
+  <ng-container *ngIf="!summary.length && !editing">
+    <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
+      Add Summary
+    </button>
+  </ng-container>
 </p>
 
 <ng-template #showEditor>
   <mat-form-field class="mat-form-field">
     <textarea
       matInput
-      autofocus
+      cdkTrapFocus
+      cdkTrapFocusAutoCapture
       cdkTextareaAutosize
       cdkAutosizeMinRows="3"
       cdkAutosizeMaxRows="8"
