@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { saveSummary, toggleIsEditingSummary } from "../store/actions";
 import {
   selectIsEditingSummary,
-  selectSummarySection,
+  selectSummary,
 } from "../store/resume-selectors";
 import { ResumeState } from "../store/resume-state";
 
@@ -23,7 +23,7 @@ export class AboutSectionContainerComponent {
   editing$: Observable<boolean>;
 
   constructor(private store: Store<ResumeState>) {
-    this.summary$ = this.store.select(selectSummarySection);
+    this.summary$ = this.store.select(selectSummary);
     this.editing$ = this.store.select(selectIsEditingSummary);
   }
 
