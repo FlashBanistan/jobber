@@ -2,10 +2,10 @@
   <section class="header">
     <div class="image"></div>
     <div class="name">
-      <b>John Doe</b>
+      <b>{{ name }}</b>
     </div>
     <div class="label">
-      <span>Web Developer</span>
+      <span>{{ label }}</span>
     </div>
   </section>
 
@@ -14,27 +14,37 @@
   <section class="contact-info">
     <div class="contact-item">
       <mat-icon>place</mat-icon>
-      <span>2712 Broadway St, San Francisco, California, US, CA 94115</span>
+      <span>{{
+        location.address +
+          ", " +
+          location.city +
+          ", " +
+          location.region +
+          ", " +
+          location.postalCode +
+          ", " +
+          location.countryCode
+      }}</span>
     </div>
     <div class="contact-item">
       <mat-icon>phone</mat-icon>
-      <span>(912) 555-4321</span>
+      <span>{{ phone }}</span>
     </div>
     <div class="contact-item">
       <mat-icon>email</mat-icon>
       <span>
-        <a href="mailto:johndoe@example.com">johndoe@example.com</a>
+        <a href="mailto:{{ email }}">{{ email }}</a>
       </span>
     </div>
     <div class="contact-item">
       <mat-icon>link</mat-icon>
       <span>
-        <a target="_blank" href="http://johndoe.com">http://johndoe.com</a>
+        <a target="_blank" href="{{ website }}">{{ website }}</a>
       </span>
     </div>
     <div class="contact-item">
       <mat-icon>language</mat-icon>
-      <span>English</span>
+      <span>English, Spanish</span>
     </div>
   </section>
 
