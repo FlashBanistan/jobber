@@ -24,11 +24,50 @@ export const selectLocation = createSelector(selectResumeState, getLocation);
 export const selectProfiles = createSelector(selectResumeState, getProfiles);
 
 // IsEditing
+const getIsEditingName = (state: ResumeState) => state.isEditingName;
+const getIsEditingLabel = (state: ResumeState) => state.isEditingLabel;
+const getIsEditingPicture = (state: ResumeState) => state.isEditingPicture;
+const getIsEditingEmail = (state: ResumeState) => state.isEditingEmail;
+const getIsEditingPhone = (state: ResumeState) => state.isEditingPhone;
+const getIsEditingWebsite = (state: ResumeState) => state.isEditingWebsite;
 const getIsEditingSummary = (state: ResumeState) => state.isEditingSummary;
-
+const getIsEditingLocation = (state: ResumeState) => state.isEditingLocation;
+const getIsEditingProfiles = (state: ResumeState) => state.isEditingProfiles;
+export const selectIsEditingName = createSelector(
+  selectResumeState,
+  getIsEditingName
+);
+export const selectIsEditingLabel = createSelector(
+  selectResumeState,
+  getIsEditingLabel
+);
+export const selectIsEditingPicture = createSelector(
+  selectResumeState,
+  getIsEditingPicture
+);
+export const selectIsEditingEmail = createSelector(
+  selectResumeState,
+  getIsEditingEmail
+);
+export const selectIsEditingPhone = createSelector(
+  selectResumeState,
+  getIsEditingPhone
+);
+export const selectIsEditingWebsite = createSelector(
+  selectResumeState,
+  getIsEditingWebsite
+);
 export const selectIsEditingSummary = createSelector(
   selectResumeState,
   getIsEditingSummary
+);
+export const selectIsEditingLocation = createSelector(
+  selectResumeState,
+  getIsEditingLocation
+);
+export const selectIsEditingProfiles = createSelector(
+  selectResumeState,
+  getIsEditingProfiles
 );
 
 const getIsLoading = (state: ResumeState) => state.isLoading;

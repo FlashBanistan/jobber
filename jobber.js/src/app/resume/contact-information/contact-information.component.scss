@@ -54,6 +54,12 @@ mat-card.mat-card {
           text-decoration: none;
         }
       }
+
+      div {
+        mat-form-field.mat-form-field {
+          font-size: 0.8em;
+        }
+      }
     }
   }
 

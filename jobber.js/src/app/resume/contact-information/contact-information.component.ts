@@ -15,7 +15,14 @@ export class ContactInformationComponent {
   @Input() email: string;
   @Input() phone: string;
   @Input() website: string;
-  @Input() summary: string;
   @Input() location: ResumeLocation;
   @Input() profiles: OnlineProfile[];
+  @Input() isEditingName: boolean;
+  @Input() isEditingLabel: boolean;
+  @Input() isEditingPicture: boolean;
+  @Input() isEditingEmail: boolean;
+  @Input() isEditingPhone: boolean;
+  @Input() isEditingWebsite: boolean;
+  @Input() isEditingLocation: boolean;
+  @Input() isEditingProfiles: boolean;
 }

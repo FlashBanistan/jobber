@@ -7,7 +7,15 @@ import { getResume, Resume } from "../interfaces/resume.interface";
 
 export interface ResumeState {
   resume: Resume;
+  isEditingName: boolean;
+  isEditingLabel: boolean;
+  isEditingPicture: boolean;
+  isEditingEmail: boolean;
+  isEditingPhone: boolean;
+  isEditingWebsite: boolean;
   isEditingSummary: boolean;
+  isEditingLocation: boolean;
+  isEditingProfiles: boolean;
   isLoading: boolean;
 }
 
@@ -131,6 +139,14 @@ export const initialResumeState: ResumeState = {
       },
     ],
   },
+  isEditingName: false,
+  isEditingLabel: false,
+  isEditingPicture: false,
+  isEditingEmail: false,
+  isEditingPhone: false,
+  isEditingWebsite: false,
   isEditingSummary: false,
+  isEditingLocation: false,
+  isEditingProfiles: false,
   isLoading: false,
 };
