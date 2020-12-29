@@ -1,6 +1,6 @@
 <p *ngIf="!editing; else showEditor" (click)="toggleEditing.emit()">
   {{ summary }}
-  <ng-container *ngIf="!summary.length && !editing">
+  <ng-container *ngIf="!summary.length">
     <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
       Add Summary
     </button>

@@ -1,52 +1,141 @@
 <mat-card class="mat-card">
   <section class="header">
+    <!-- IMAGE -->
     <div class="image"></div>
+    <!-- NAME -->
     <div class="name">
-      <b>{{ name }}</b>
+      <b
+        *ngIf="!isEditingName; else showName"
+        (click)="toggleIsEditingName.emit()"
+      >
+        <span>{{ name }}</span>
+        <ng-container *ngIf="!name.length">
+          <button
+            color="accent"
+            mat-flat-button
+            (click)="toggleIsEditingName.emit()"
+          >
+            Add Name
+          </button>
+        </ng-container></b
+      >
+      <ng-template #showName>
+        <mat-form-field>
+          <input
+            cdkTrapFocus
+            cdkTrapFocusAutoCapture
+            matInput
+            [(ngModel)]="name"
+            (blur)="saveName.emit(name)"
+          />
+        </mat-form-field>
+      </ng-template>
     </div>
+    <!-- LABEL -->
     <div class="label">
-      <span>{{ label }}</span>
+      <span
+        *ngIf="!isEditingLabel; else showLabel"
+        (click)="toggleIsEditingLabel.emit()"
+        ><span>{{ label }}</span
+        ><ng-container *ngIf="!label.length">
+          <button
+            color="accent"
+            mat-flat-button
+            (click)="toggleIsEditingLabel.emit()"
+          >
+            Add Label
+          </button>
+        </ng-container></span
+      >
+      <ng-template #showLabel>
+        <mat-form-field>
+          <input
+            cdkTrapFocus
+            cdkTrapFocusAutoCapture
+            matInput
+            [(ngModel)]="label"
+            (blur)="saveLabel.emit(label)"
+          />
+        </mat-form-field>
+      </ng-template>
     </div>
   </section>
 
   <hr />
 
   <section class="contact-info">
+    <!-- LOCATION -->
     <div class="contact-item">
       <mat-icon>place</mat-icon>
-      <span>{{
-        location.address +
-          ", " +
-          location.city +
-          ", " +
-          location.region +
-          ", " +
-          location.postalCode +
-          ", " +
-          location.countryCode
-      }}</span>
-      <!-- <div>
-        <mat-form-field class="mat-form-field">
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field class="mat-form-field">
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field class="mat-form-field">
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field class="mat-form-field">
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field class="mat-form-field">
-          <input matInput />
-        </mat-form-field>
-      </div> -->
+      <span
+        *ngIf="!isEditingLocation; else showLocation"
+        (click)="toggleIsEditingLocation.emit()"
+        >{{
+          location.address +
+            ", " +
+            location.city +
+            ", " +
+            location.region +
+            ", " +
+            location.postalCode +
+            ", " +
+            location.countryCode
+        }}</span
+      >
+      <ng-template #showLocation>
+        <div
+          (clickOutside)="saveLocation.emit(location)"
+          delayClickOutsideInit="true"
+        >
+          <mat-form-field class="mat-form-field">
+            <input matInput [(ngModel)]="location.address" />
+          </mat-form-field>
+          <mat-form-field class="mat-form-field">
+            <input matInput [(ngModel)]="location.city" />
+          </mat-form-field>
+          <mat-form-field class="mat-form-field">
+            <input matInput [(ngModel)]="location.region" />
+          </mat-form-field>
+          <mat-form-field class="mat-form-field">
+            <input matInput [(ngModel)]="location.postalCode" />
+          </mat-form-field>
+          <mat-form-field class="mat-form-field">
+            <input matInput [(ngModel)]="location.countryCode" />
+          </mat-form-field>
+        </div>
+      </ng-template>
     </div>
+    <!-- PHONE -->
     <div class="contact-item">
       <mat-icon>phone</mat-icon>
-      <span>{{ phone }}</span>
+      <span
+        *ngIf="!isEditingPhone; else showPhone"
+        (click)="toggleIsEditingPhone.emit()"
+      >
+        <ng-container>{{ phone }}</ng-container>
+        <ng-container *ngIf="!phone.length">
+          <button
+            color="accent"
+            mat-flat-button
+            (click)="toggleIsEditingPhone.emit()"
+          >
+            Add Phone
+          </button>
+        </ng-container></span
+      >
+      <ng-template #showPhone>
+        <mat-form-field>
+          <input
+            matInput
+            cdkTrapFocus
+            cdkTrapFocusAutoCapture
+            [(ngModel)]="phone"
+            (blur)="savePhone.emit(phone)"
+          />
+        </mat-form-field>
+      </ng-template>
     </div>
+    <!-- EMAIL -->
     <div class="contact-item">
       <mat-icon>email</mat-icon>
       <span>
@@ -54,12 +143,14 @@
       </span>
     </div>
     <div class="contact-item">
+      <!-- WEBSITE -->
       <mat-icon>link</mat-icon>
       <span>
         <a target="_blank" href="{{ website }}">{{ website }}</a>
       </span>
     </div>
     <div class="contact-item">
+      <!-- LANGUAGE -->
       <mat-icon>language</mat-icon>
       <span>English, Spanish</span>
     </div>
@@ -68,6 +159,7 @@
   <hr />
 
   <section class="profiles">
+    <!-- PROFILES -->
     <button mat-icon-button>
       <mat-icon>facebook</mat-icon>
     </button>

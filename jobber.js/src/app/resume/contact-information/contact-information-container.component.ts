@@ -4,6 +4,24 @@ import { Observable } from "rxjs";
 import { OnlineProfile } from "../interfaces/online-profile.interface";
 import { ResumeLocation } from "../interfaces/resume-location.interface";
 import {
+  saveEmail,
+  saveLabel,
+  saveLocation,
+  saveName,
+  savePhone,
+  savePicture,
+  saveProfiles,
+  saveWebsite,
+  toggleIsEditingEmail,
+  toggleIsEditingLabel,
+  toggleIsEditingLocation,
+  toggleIsEditingName,
+  toggleIsEditingPhone,
+  toggleIsEditingPicture,
+  toggleIsEditingProfiles,
+  toggleIsEditingWebsite,
+} from "../store/actions";
+import {
   selectEmail,
   selectIsEditingEmail,
   selectIsEditingLabel,
@@ -43,6 +61,22 @@ import { ResumeState } from "../store/resume-state";
       [isEditingWebsite]="isEditingWebsite$ | async"
       [isEditingLocation]="isEditingLocation$ | async"
       [isEditingProfiles]="isEditingProfiles$ | async"
+      (toggleIsEditingName)="toggleIsEditingName()"
+      (toggleIsEditingLabel)="toggleIsEditingLabel()"
+      (toggleIsEditingPicture)="toggleIsEditingPicture()"
+      (toggleIsEditingEmail)="toggleIsEditingEmail()"
+      (toggleIsEditingPhone)="toggleIsEditingPhone()"
+      (toggleIsEditingWebsite)="toggleIsEditingWebsite()"
+      (toggleIsEditingLocation)="toggleIsEditingLocation()"
+      (toggleIsEditingProfiles)="toggleIsEditingProfiles()"
+      (saveName)="saveName($event)"
+      (saveLabel)="saveLabel($event)"
+      (savePicture)="savePicture($event)"
+      (saveEmail)="saveEmail($event)"
+      (savePhone)="savePhone($event)"
+      (saveWebsite)="saveWebsite($event)"
+      (saveLocation)="saveLocation($event)"
+      (saveProfiles)="saveProfiles($event)"
     >
     </app-contact-information>
   `,
@@ -65,6 +99,70 @@ export class ContactInformationContainerComponent {
   isEditingWebsite$: Observable<boolean>;
   isEditingLocation$: Observable<boolean>;
   isEditingProfiles$: Observable<boolean>;
+
+  toggleIsEditingName() {
+    this.store.dispatch(toggleIsEditingName());
+  }
+
+  toggleIsEditingLabel() {
+    this.store.dispatch(toggleIsEditingLabel());
+  }
+
+  toggleIsEditingPicture() {
+    this.store.dispatch(toggleIsEditingPicture());
+  }
+
+  toggleIsEditingEmail() {
+    this.store.dispatch(toggleIsEditingEmail());
+  }
+
+  toggleIsEditingPhone() {
+    this.store.dispatch(toggleIsEditingPhone());
+  }
+
+  toggleIsEditingWebsite() {
+    this.store.dispatch(toggleIsEditingWebsite());
+  }
+
+  toggleIsEditingLocation() {
+    this.store.dispatch(toggleIsEditingLocation());
+  }
+
+  toggleIsEditingProfiles() {
+    this.store.dispatch(toggleIsEditingProfiles());
+  }
+
+  saveName(name: string) {
+    this.store.dispatch(saveName({ name }));
+  }
+
+  saveLabel(label: string) {
+    this.store.dispatch(saveLabel({ label }));
+  }
+
+  savePicture(picture: string) {
+    this.store.dispatch(savePicture({ picture }));
+  }
+
+  saveEmail(email: string) {
+    this.store.dispatch(saveEmail({ email }));
+  }
+
+  savePhone(phone: string) {
+    this.store.dispatch(savePhone({ phone }));
+  }
+
+  saveWebsite(website: string) {
+    this.store.dispatch(saveWebsite({ website }));
+  }
+
+  saveLocation(location: ResumeLocation) {
+    this.store.dispatch(saveLocation({ location }));
+  }
+
+  saveProfiles(profiles: OnlineProfile[]) {
+    this.store.dispatch(saveProfiles({ profiles }));
+  }
 
   constructor(private store: Store<ResumeState>) {
     this.name$ = this.store.select(selectName);
