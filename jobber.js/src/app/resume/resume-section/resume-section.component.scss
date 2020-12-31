@@ -5,6 +5,10 @@ section {
     display: flex;
     padding: 0px 10px;
     color: #707070;
+
+    ::ng-deep button {
+      margin-top: -10px;
+    }
   }
   div.header {
     display: flex;

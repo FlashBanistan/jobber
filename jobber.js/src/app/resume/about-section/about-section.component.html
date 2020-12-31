@@ -1,23 +1,35 @@
-<p *ngIf="!editing; else showEditor" (click)="toggleEditing.emit()">
-  {{ summary }}
-  <ng-container *ngIf="!summary.length">
-    <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
-      Add Summary
+<app-resume-section>
+  <app-resume-section-icon>
+    <button
+      mat-icon-button
+      (click)="editing ? saveField.emit(summary) : toggleEditing.emit()"
+    >
+      <mat-icon>contact_page</mat-icon>
     </button>
-  </ng-container>
-</p>
+  </app-resume-section-icon>
+  <app-resume-section-header>About</app-resume-section-header>
+  <app-resume-section-content>
+    <p *ngIf="!editing; else showEditor">
+      {{ summary }}
+      <ng-container *ngIf="!summary.length">
+        <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
+          Add Summary
+        </button>
+      </ng-container>
+    </p>
 
-<ng-template #showEditor>
-  <mat-form-field class="mat-form-field">
-    <textarea
-      matInput
-      cdkTrapFocus
-      cdkTrapFocusAutoCapture
-      cdkTextareaAutosize
-      cdkAutosizeMinRows="3"
-      cdkAutosizeMaxRows="8"
-      [(ngModel)]="summary"
-      (blur)="saveField.emit(summary)"
-    ></textarea>
-  </mat-form-field>
-</ng-template>
+    <ng-template #showEditor>
+      <mat-form-field class="mat-form-field">
+        <textarea
+          matInput
+          cdkTrapFocus
+          cdkTrapFocusAutoCapture
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="3"
+          cdkAutosizeMaxRows="8"
+          [(ngModel)]="summary"
+        ></textarea>
+      </mat-form-field>
+    </ng-template>
+  </app-resume-section-content>
+</app-resume-section>
