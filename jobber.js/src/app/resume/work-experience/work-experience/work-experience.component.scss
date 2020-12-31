@@ -1,0 +1,19 @@
+app-resume-section-content {
+  div {
+    p:first-child {
+      margin-bottom: 0px;
+    }
+
+    p {
+      small {
+        display: flex;
+        align-items: center;
+        mat-icon {
+          font-size: 15px;
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+  }
+}

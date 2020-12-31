@@ -6,27 +6,32 @@
   </app-resume-section-icon>
   <app-resume-section-header>Work Experience</app-resume-section-header>
   <app-resume-section-content>
-    <!-- <p *ngIf="!editing; else showEditor">
-      {{ summary }}
-      <ng-container *ngIf="!summary.length">
-        <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
-          Add Summary
-        </button>
-      </ng-container>
-    </p>
+    <div *ngFor="let work of workExperience">
+      <p>
+        <strong>{{ work.position }}</strong
+        >,&nbsp;<a href="{{ work.website }}" target="_blank">{{
+          work.company
+        }}</a>
+      </p>
 
-    <ng-template #showEditor>
-      <mat-form-field class="mat-form-field">
-        <textarea
-          matInput
-          cdkTrapFocus
-          cdkTrapFocusAutoCapture
-          cdkTextareaAutosize
-          cdkAutosizeMinRows="3"
-          cdkAutosizeMaxRows="8"
-          [(ngModel)]="summary"
-        ></textarea>
-      </mat-form-field>
-    </ng-template> -->
+      <p>
+        <small>
+          <span>{{ work.startDate | date }} - {{ work.endDate | date }}</span>
+          &nbsp; &nbsp;
+          <mat-icon>access_time</mat-icon>
+          <span>{{ durationElapsed(work.startDate, work.endDate) }}</span>
+        </small>
+      </p>
+
+      <p>
+        {{ work.summary }}
+      </p>
+
+      <ul>
+        <li *ngFor="let highlight of work.highlights">
+          {{ highlight }}
+        </li>
+      </ul>
+    </div>
   </app-resume-section-content>
 </app-resume-section>
