@@ -9,6 +9,7 @@ import { ResumeLayoutComponent } from "./resume-layout/resume-layout.component";
 import { MaterialModule } from "../shared/material.module";
 import { ContactInformationModule } from "./contact-information/contact-information.module";
 import { AboutSectionModule } from "./about-section/about-section.module";
+import { WorkExperienceModule } from "./work-experience/work-experience.module";
 
 @NgModule({
   declarations: [ResumeLayoutComponent],
@@ -20,6 +21,7 @@ import { AboutSectionModule } from "./about-section/about-section.module";
     ResumeRoutingModule,
     ContactInformationModule,
     AboutSectionModule,
+    WorkExperienceModule,
   ],
   providers: [],
 })

@@ -1,0 +1,32 @@
+<app-resume-section>
+  <app-resume-section-icon>
+    <button mat-icon-button>
+      <mat-icon>apartments</mat-icon>
+    </button>
+  </app-resume-section-icon>
+  <app-resume-section-header>Work Experience</app-resume-section-header>
+  <app-resume-section-content>
+    <!-- <p *ngIf="!editing; else showEditor">
+      {{ summary }}
+      <ng-container *ngIf="!summary.length">
+        <button color="accent" mat-flat-button (click)="toggleEditing.emit()">
+          Add Summary
+        </button>
+      </ng-container>
+    </p>
+
+    <ng-template #showEditor>
+      <mat-form-field class="mat-form-field">
+        <textarea
+          matInput
+          cdkTrapFocus
+          cdkTrapFocusAutoCapture
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="3"
+          cdkAutosizeMaxRows="8"
+          [(ngModel)]="summary"
+        ></textarea>
+      </mat-form-field>
+    </ng-template> -->
+  </app-resume-section-content>
+</app-resume-section>
