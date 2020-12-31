@@ -66,27 +66,29 @@
   <section class="contact-info">
     <!-- LOCATION -->
     <div class="contact-item">
-      <mat-icon>place</mat-icon>
-      <span
-        *ngIf="!isEditingLocation; else showLocation"
-        (click)="toggleIsEditingLocation.emit()"
-        >{{
-          location.address +
-            ", " +
-            location.city +
-            ", " +
-            location.region +
-            ", " +
-            location.postalCode +
-            ", " +
-            location.countryCode
-        }}</span
+      <button
+        mat-icon-button
+        (click)="
+          isEditingLocation
+            ? saveLocation.emit(location)
+            : toggleIsEditingLocation.emit()
+        "
       >
+        <mat-icon>place</mat-icon>
+      </button>
+      <span *ngIf="!isEditingLocation; else showLocation">{{
+        location.address +
+          ", " +
+          location.city +
+          ", " +
+          location.region +
+          ", " +
+          location.postalCode +
+          ", " +
+          location.countryCode
+      }}</span>
       <ng-template #showLocation>
-        <div
-          (clickOutside)="saveLocation.emit(location)"
-          delayClickOutsideInit="true"
-        >
+        <div>
           <mat-form-field class="mat-form-field">
             <input matInput [(ngModel)]="location.address" />
           </mat-form-field>
@@ -107,11 +109,15 @@
     </div>
     <!-- PHONE -->
     <div class="contact-item">
-      <mat-icon>phone</mat-icon>
-      <span
-        *ngIf="!isEditingPhone; else showPhone"
-        (click)="toggleIsEditingPhone.emit()"
+      <button
+        mat-icon-button
+        (click)="
+          isEditingPhone ? savePhone.emit(phone) : toggleIsEditingPhone.emit()
+        "
       >
+        <mat-icon>phone</mat-icon>
+      </button>
+      <span *ngIf="!isEditingPhone; else showPhone">
         <ng-container>{{ phone }}</ng-container>
         <ng-container *ngIf="!phone.length">
           <button
@@ -130,29 +136,139 @@
             cdkTrapFocus
             cdkTrapFocusAutoCapture
             [(ngModel)]="phone"
-            (blur)="savePhone.emit(phone)"
           />
         </mat-form-field>
       </ng-template>
     </div>
     <!-- EMAIL -->
     <div class="contact-item">
-      <mat-icon>email</mat-icon>
-      <span>
-        <a href="mailto:{{ email }}">{{ email }}</a>
+      <button
+        mat-icon-button
+        (click)="
+          isEditingEmail ? saveEmail.emit(email) : toggleIsEditingEmail.emit()
+        "
+      >
+        <mat-icon>email</mat-icon>
+      </button>
+      <span *ngIf="!isEditingEmail; else showEmail">
+        <ng-container>
+          <a href="mailto:{{ email }}">{{ email }}</a>
+        </ng-container>
+        <ng-container *ngIf="!email.length">
+          <button
+            color="accent"
+            mat-flat-button
+            (click)="toggleIsEditingEmail.emit()"
+          >
+            Add Email
+          </button>
+        </ng-container>
       </span>
+      <ng-template #showEmail>
+        <mat-form-field>
+          <input
+            matInput
+            cdkTrapFocus
+            cdkTrapFocusAutoCapture
+            [(ngModel)]="email"
+          />
+        </mat-form-field>
+      </ng-template>
     </div>
     <div class="contact-item">
       <!-- WEBSITE -->
-      <mat-icon>link</mat-icon>
-      <span>
-        <a target="_blank" href="{{ website }}">{{ website }}</a>
+      <button
+        mat-icon-button
+        (click)="
+          isEditingWebsite
+            ? saveWebsite.emit(website)
+            : toggleIsEditingWebsite.emit()
+        "
+      >
+        <mat-icon>link</mat-icon>
+      </button>
+      <span *ngIf="!isEditingWebsite; else showWebsite">
+        <ng-container>
+          <a target="_blank" href="{{ website }}">{{ website }}</a>
+        </ng-container>
+        <ng-container *ngIf="!website.length">
+          <button
+            color="accent"
+            mat-flat-button
+            (click)="toggleIsEditingWebsite.emit()"
+          >
+            Add Website
+          </button>
+        </ng-container>
       </span>
+      <ng-template #showWebsite>
+        <mat-form-field>
+          <input
+            matInput
+            cdkTrapFocus
+            cdkTrapFocusAutoCapture
+            [(ngModel)]="website"
+          />
+        </mat-form-field>
+      </ng-template>
     </div>
     <div class="contact-item">
       <!-- LANGUAGE -->
-      <mat-icon>language</mat-icon>
-      <span>English, Spanish</span>
+      <button
+        mat-icon-button
+        (click)="
+          isEditingLanguages
+            ? saveLanguages.emit(languages)
+            : toggleIsEditingLanguages.emit()
+        "
+      >
+        <mat-icon>language</mat-icon>
+      </button>
+      <ng-container *ngIf="!isEditingLanguages; else showLanguages">
+        <span *ngFor="let language of languages"
+          >{{ language.language | languageDisplay }}&nbsp;</span
+        >
+      </ng-container>
+      <ng-template #showLanguages>
+        <div>
+          <ng-container *ngFor="let language of languages; let i = index">
+            <div>
+              <mat-form-field class="language-form-field">
+                <mat-select
+                  [(ngModel)]="languages[i].language"
+                  placeholder="Language"
+                >
+                  <mat-option
+                    *ngFor="let languageOption of languageOptions"
+                    [value]="languageOption"
+                  >
+                    {{ languageOption | languageDisplay }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="language-form-field">
+                <mat-select
+                  [(ngModel)]="languages[i].fluency"
+                  placeholder="Fluency"
+                >
+                  <mat-option
+                    *ngFor="let fluencyLevel of fluencyOptions"
+                    [value]="fluencyLevel"
+                  >
+                    {{ fluencyLevel | fluencyLevelDisplay }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button mat-icon-button (click)="deleteLanguage(i)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+          </ng-container>
+          <button mat-flat-button color="accent" (click)="addLanguage()">
+            Add Language
+          </button>
+        </div>
+      </ng-template>
     </div>
   </section>
 

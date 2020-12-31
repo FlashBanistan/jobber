@@ -1,6 +1,6 @@
 import { Award } from "./award.interface";
 import { Education } from "./education.interface";
-import { Language } from "./language.interface";
+import { ResumeLanguage } from "./resume-language.interface";
 import { Publication } from "./publication.interface";
 import { ResumeBasics } from "./resume-basics.interface";
 import { Skill } from "./skill.interface";
@@ -17,7 +17,7 @@ export interface Resume {
   awards: Award[];
   publications: Publication[];
   skills: Skill[];
-  languages: Language[];
+  languages: ResumeLanguage[];
   interests: any[];
   references: any[];
 }

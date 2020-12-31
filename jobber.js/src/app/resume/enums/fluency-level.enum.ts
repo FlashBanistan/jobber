@@ -4,3 +4,7 @@ export enum FluencyLevel {
   ADVANCED = "ADVANCED",
   SUPERIOR = "SUPERIOR",
 }
+
+export const getFluencyOptions = (): FluencyLevel[] => {
+  return Object.values(FluencyLevel);
+};

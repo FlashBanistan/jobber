@@ -16,6 +16,7 @@ export interface ResumeState {
   isEditingSummary: boolean;
   isEditingLocation: boolean;
   isEditingProfiles: boolean;
+  isEditingLanguages: boolean;
   isLoading: boolean;
 }
 
@@ -125,6 +126,18 @@ export const initialResumeState: ResumeState = {
         language: Language.ENGLISH,
         fluency: FluencyLevel.SUPERIOR,
       },
+      {
+        id: 2,
+        resume: 1,
+        language: Language.SPANISH,
+        fluency: FluencyLevel.INTERMEDIATE,
+      },
+      {
+        id: 3,
+        resume: 1,
+        language: Language.MANDARIN,
+        fluency: FluencyLevel.NOVICE,
+      },
     ],
     interests: [
       {
@@ -148,5 +161,6 @@ export const initialResumeState: ResumeState = {
   isEditingSummary: false,
   isEditingLocation: false,
   isEditingProfiles: false,
+  isEditingLanguages: false,
   isLoading: false,
 };

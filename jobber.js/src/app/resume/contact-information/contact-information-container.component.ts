@@ -1,11 +1,13 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
+import { ResumeLanguage } from "../interfaces/resume-language.interface";
 import { OnlineProfile } from "../interfaces/online-profile.interface";
 import { ResumeLocation } from "../interfaces/resume-location.interface";
 import {
   saveEmail,
   saveLabel,
+  saveLanguages,
   saveLocation,
   saveName,
   savePhone,
@@ -20,11 +22,13 @@ import {
   toggleIsEditingPicture,
   toggleIsEditingProfiles,
   toggleIsEditingWebsite,
+  toggleIsEditingLanguages,
 } from "../store/actions";
 import {
   selectEmail,
   selectIsEditingEmail,
   selectIsEditingLabel,
+  selectIsEditingLanguages,
   selectIsEditingLocation,
   selectIsEditingName,
   selectIsEditingPhone,
@@ -32,6 +36,7 @@ import {
   selectIsEditingProfiles,
   selectIsEditingWebsite,
   selectLabel,
+  selectLanguages,
   selectLocation,
   selectName,
   selectPhone,
@@ -53,6 +58,7 @@ import { ResumeState } from "../store/resume-state";
       [website]="website$ | async"
       [location]="location$ | async"
       [profiles]="profiles$ | async"
+      [languages]="languages$ | async"
       [isEditingName]="isEditingName$ | async"
       [isEditingLabel]="isEditingLabel$ | async"
       [isEditingPicture]="isEditingPicture$ | async"
@@ -61,6 +67,7 @@ import { ResumeState } from "../store/resume-state";
       [isEditingWebsite]="isEditingWebsite$ | async"
       [isEditingLocation]="isEditingLocation$ | async"
       [isEditingProfiles]="isEditingProfiles$ | async"
+      [isEditingLanguages]="isEditingLanguages$ | async"
       (toggleIsEditingName)="toggleIsEditingName()"
       (toggleIsEditingLabel)="toggleIsEditingLabel()"
       (toggleIsEditingPicture)="toggleIsEditingPicture()"
@@ -69,6 +76,7 @@ import { ResumeState } from "../store/resume-state";
       (toggleIsEditingWebsite)="toggleIsEditingWebsite()"
       (toggleIsEditingLocation)="toggleIsEditingLocation()"
       (toggleIsEditingProfiles)="toggleIsEditingProfiles()"
+      (toggleIsEditingLanguages)="toggleIsEditingLanguages()"
       (saveName)="saveName($event)"
       (saveLabel)="saveLabel($event)"
       (savePicture)="savePicture($event)"
@@ -77,6 +85,7 @@ import { ResumeState } from "../store/resume-state";
       (saveWebsite)="saveWebsite($event)"
       (saveLocation)="saveLocation($event)"
       (saveProfiles)="saveProfiles($event)"
+      (saveLanguages)="saveLanguages($event)"
     >
     </app-contact-information>
   `,
@@ -91,6 +100,7 @@ export class ContactInformationContainerComponent {
   website$: Observable<string>;
   location$: Observable<ResumeLocation>;
   profiles$: Observable<OnlineProfile[]>;
+  languages$: Observable<ResumeLanguage[]>;
   isEditingName$: Observable<boolean>;
   isEditingLabel$: Observable<boolean>;
   isEditingPicture$: Observable<boolean>;
@@ -99,6 +109,7 @@ export class ContactInformationContainerComponent {
   isEditingWebsite$: Observable<boolean>;
   isEditingLocation$: Observable<boolean>;
   isEditingProfiles$: Observable<boolean>;
+  isEditingLanguages$: Observable<boolean>;
 
   toggleIsEditingName() {
     this.store.dispatch(toggleIsEditingName());
@@ -130,6 +141,10 @@ export class ContactInformationContainerComponent {
 
   toggleIsEditingProfiles() {
     this.store.dispatch(toggleIsEditingProfiles());
+  }
+
+  toggleIsEditingLanguages() {
+    this.store.dispatch(toggleIsEditingLanguages());
   }
 
   saveName(name: string) {
@@ -164,6 +179,10 @@ export class ContactInformationContainerComponent {
     this.store.dispatch(saveProfiles({ profiles }));
   }
 
+  saveLanguages(languages: ResumeLanguage[]) {
+    this.store.dispatch(saveLanguages({ languages }));
+  }
+
   constructor(private store: Store<ResumeState>) {
     this.name$ = this.store.select(selectName);
     this.label$ = this.store.select(selectLabel);
@@ -173,6 +192,7 @@ export class ContactInformationContainerComponent {
     this.website$ = this.store.select(selectWebsite);
     this.location$ = this.store.select(selectLocation);
     this.profiles$ = this.store.select(selectProfiles);
+    this.languages$ = this.store.select(selectLanguages);
     this.isEditingName$ = this.store.select(selectIsEditingName);
     this.isEditingLabel$ = this.store.select(selectIsEditingLabel);
     this.isEditingPicture$ = this.store.select(selectIsEditingPicture);
@@ -181,5 +201,6 @@ export class ContactInformationContainerComponent {
     this.isEditingWebsite$ = this.store.select(selectIsEditingWebsite);
     this.isEditingLocation$ = this.store.select(selectIsEditingLocation);
     this.isEditingProfiles$ = this.store.select(selectIsEditingProfiles);
+    this.isEditingLanguages$ = this.store.select(selectIsEditingLanguages);
   }
 }

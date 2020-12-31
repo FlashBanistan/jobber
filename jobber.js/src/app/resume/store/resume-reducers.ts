@@ -3,6 +3,7 @@ import {
   fetchResume,
   saveEmail,
   saveLabel,
+  saveLanguages,
   saveLocation,
   saveName,
   savePhone,
@@ -12,6 +13,7 @@ import {
   saveWebsite,
   toggleIsEditingEmail,
   toggleIsEditingLabel,
+  toggleIsEditingLanguages,
   toggleIsEditingLocation,
   toggleIsEditingName,
   toggleIsEditingPhone,
@@ -59,6 +61,10 @@ export const resumeReducers = createReducer(
   on(toggleIsEditingProfiles, (state) => ({
     ...state,
     isEditingProfiles: !state.isEditingProfiles,
+  })),
+  on(toggleIsEditingLanguages, (state) => ({
+    ...state,
+    isEditingLanguages: !state.isEditingLanguages,
   })),
   on(saveName, (state, action) => ({
     ...state,
@@ -158,6 +164,14 @@ export const resumeReducers = createReducer(
       },
     },
     isEditingProfiles: false,
+  })),
+  on(saveLanguages, (state, action) => ({
+    ...state,
+    resume: {
+      ...state.resume,
+      languages: action.languages,
+    },
+    isEditingLanguages: false,
   })),
   on(fetchResume, (state) => ({
     ...state,

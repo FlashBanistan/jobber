@@ -40,10 +40,10 @@ mat-card.mat-card {
     div.contact-item {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: baseline;
 
       mat-icon {
-        padding: 10px 20px;
+        // padding: 10px 20px;
         color: #707070;
       }
 
@@ -59,6 +59,14 @@ mat-card.mat-card {
         mat-form-field.mat-form-field {
           width: 100%;
           font-size: 0.8em;
+        }
+        mat-form-field.language-form-field {
+          width: 42%;
+        }
+        button {
+          mat-icon {
+            padding: 0px;
+          }
         }
       }
     }

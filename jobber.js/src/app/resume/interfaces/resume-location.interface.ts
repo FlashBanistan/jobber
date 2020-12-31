@@ -5,3 +5,11 @@ export interface ResumeLocation {
   countryCode: string;
   region: string;
 }
+
+export const getResumeLocation = (): ResumeLocation => ({
+  address: "",
+  postalCode: "",
+  city: "",
+  countryCode: "",
+  region: "",
+});

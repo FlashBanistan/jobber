@@ -6,6 +6,7 @@ import { ClickOutsideModule } from "ng-click-outside";
 import { MaterialModule } from "src/app/shared/material.module";
 import { ContactInformationContainerComponent } from "./contact-information-container.component";
 import { ContactInformationComponent } from "./contact-information.component";
+import { PipesModule } from "src/app/shared/pipes/pipes.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ContactInformationComponent } from "./contact-information.component";
     A11yModule,
     ClickOutsideModule,
     MaterialModule,
+    PipesModule,
   ],
   exports: [ContactInformationContainerComponent],
 })

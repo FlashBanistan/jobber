@@ -5,6 +5,12 @@ import {
   Input,
   Output,
 } from "@angular/core";
+import { FluencyLevel, getFluencyOptions } from "../enums/fluency-level.enum";
+import { getResumeLanguageOptions, Language } from "../enums/language.enum";
+import {
+  getResumeLanguage,
+  ResumeLanguage,
+} from "../interfaces/resume-language.interface";
 import { OnlineProfile } from "../interfaces/online-profile.interface";
 import { ResumeLocation } from "../interfaces/resume-location.interface";
 
@@ -23,6 +29,7 @@ export class ContactInformationComponent {
   @Input() website: string;
   @Input() location: ResumeLocation;
   @Input() profiles: OnlineProfile[];
+  @Input() languages: ResumeLanguage[];
 
   @Input() isEditingName: boolean;
   @Input() isEditingLabel: boolean;
@@ -32,15 +39,17 @@ export class ContactInformationComponent {
   @Input() isEditingWebsite: boolean;
   @Input() isEditingLocation: boolean;
   @Input() isEditingProfiles: boolean;
+  @Input() isEditingLanguages: boolean;
 
-  @Output() toggleIsEditingName = new EventEmitter<boolean>();
-  @Output() toggleIsEditingLabel = new EventEmitter<boolean>();
-  @Output() toggleIsEditingPicture = new EventEmitter<boolean>();
-  @Output() toggleIsEditingEmail = new EventEmitter<boolean>();
-  @Output() toggleIsEditingPhone = new EventEmitter<boolean>();
-  @Output() toggleIsEditingWebsite = new EventEmitter<boolean>();
-  @Output() toggleIsEditingLocation = new EventEmitter<boolean>();
-  @Output() toggleIsEditingProfiles = new EventEmitter<boolean>();
+  @Output() toggleIsEditingName = new EventEmitter();
+  @Output() toggleIsEditingLabel = new EventEmitter();
+  @Output() toggleIsEditingPicture = new EventEmitter();
+  @Output() toggleIsEditingEmail = new EventEmitter();
+  @Output() toggleIsEditingPhone = new EventEmitter();
+  @Output() toggleIsEditingWebsite = new EventEmitter();
+  @Output() toggleIsEditingLocation = new EventEmitter();
+  @Output() toggleIsEditingProfiles = new EventEmitter();
+  @Output() toggleIsEditingLanguages = new EventEmitter();
 
   @Output() saveName = new EventEmitter<string>();
   @Output() saveLabel = new EventEmitter<string>();
@@ -50,4 +59,19 @@ export class ContactInformationComponent {
   @Output() saveWebsite = new EventEmitter<string>();
   @Output() saveLocation = new EventEmitter<ResumeLocation>();
   @Output() saveProfiles = new EventEmitter<OnlineProfile[]>();
+  @Output() saveLanguages = new EventEmitter<ResumeLanguage[]>();
+
+  languageOptions: Language[] = getResumeLanguageOptions();
+  fluencyOptions: FluencyLevel[] = getFluencyOptions();
+
+  deleteLanguage(index: number) {
+    if (this.languages.length < 2) {
+      return;
+    }
+    this.languages.splice(index, 1);
+  }
+
+  addLanguage() {
+    this.languages.push(getResumeLanguage());
+  }
 }
