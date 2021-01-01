@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { Work } from "../../interfaces/work.interface";
+import { Work } from "../work.interface";
 import { formatDistance } from "date-fns";
 
 @Component({

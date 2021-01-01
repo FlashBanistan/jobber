@@ -1,4 +1,4 @@
-import { SkillLevel } from "../enums/skill-level.enum";
+import { SkillLevel } from "./skill-level.enum";
 
 export interface Skill {
   readonly id: number;

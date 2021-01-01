@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { FluencyLevel } from "src/app/resume/enums/fluency-level.enum";
+import { FluencyLevel } from "src/app/resume/sections/contact-information/fluency-level.enum";
 
 @Pipe({
   name: "fluencyLevelDisplay",

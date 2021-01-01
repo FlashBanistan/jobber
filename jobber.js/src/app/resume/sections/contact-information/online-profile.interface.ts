@@ -1,4 +1,4 @@
-import { OnlineNetwork } from "../enums/online-network.enum";
+import { OnlineNetwork } from "./online-network.enum";
 
 export interface OnlineProfile {
   readonly id: number;

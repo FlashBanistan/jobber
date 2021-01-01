@@ -1,5 +1,5 @@
-import { FluencyLevel } from "../enums/fluency-level.enum";
-import { Language as LanguageEnum } from "../enums/language.enum";
+import { FluencyLevel } from "./fluency-level.enum";
+import { Language as LanguageEnum } from "./language.enum";
 
 export interface ResumeLanguage {
   readonly id: number;

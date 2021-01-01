@@ -1,11 +1,11 @@
-import { Award } from "./award.interface";
-import { Education } from "./education.interface";
-import { ResumeLanguage } from "./resume-language.interface";
-import { Publication } from "./publication.interface";
-import { ResumeBasics } from "./resume-basics.interface";
-import { Skill } from "./skill.interface";
-import { Volunteer } from "./volunteer.interface";
-import { Work } from "./work.interface";
+import { Award } from "./sections/awards/award.interface";
+import { Education } from "./sections/education/education.interface";
+import { ResumeLanguage } from "./sections/contact-information/resume-language.interface";
+import { Publication } from "./sections/publications/publication.interface";
+import { ResumeBasics } from "./sections/contact-information/resume-basics.interface";
+import { Skill } from "./sections/skills/skill.interface";
+import { Volunteer } from "./sections/volunteer-work/volunteer.interface";
+import { Work } from "./sections/work-experience/work.interface";
 
 export interface Resume {
   readonly id: number;

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { Language } from "src/app/resume/enums/language.enum";
+import { Language } from "src/app/resume/sections/contact-information/language.enum";
 
 @Pipe({
   name: "languageDisplay",

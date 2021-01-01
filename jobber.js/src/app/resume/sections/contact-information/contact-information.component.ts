@@ -5,17 +5,11 @@ import {
   Input,
   Output,
 } from "@angular/core";
-import {
-  FluencyLevel,
-  getFluencyOptions,
-} from "../../enums/fluency-level.enum";
-import { getResumeLanguageOptions, Language } from "../../enums/language.enum";
-import {
-  getResumeLanguage,
-  ResumeLanguage,
-} from "../../interfaces/resume-language.interface";
-import { OnlineProfile } from "../../interfaces/online-profile.interface";
-import { ResumeLocation } from "../../interfaces/resume-location.interface";
+import { FluencyLevel, getFluencyOptions } from "./fluency-level.enum";
+import { getResumeLanguageOptions, Language } from "./language.enum";
+import { getResumeLanguage, ResumeLanguage } from "./resume-language.interface";
+import { OnlineProfile } from "./online-profile.interface";
+import { ResumeLocation } from "./resume-location.interface";
 
 @Component({
   selector: "app-contact-information",

@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ResumeLanguage } from "../../interfaces/resume-language.interface";
+import { ResumeLanguage } from "../../sections/contact-information/resume-language.interface";
 
 export const saveLanguages = createAction(
   "[Resume] Save Languages",

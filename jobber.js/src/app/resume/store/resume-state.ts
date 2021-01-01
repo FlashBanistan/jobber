@@ -1,9 +1,9 @@
-import { FluencyLevel } from "../enums/fluency-level.enum";
-import { Language } from "../enums/language.enum";
-import { OnlineNetwork } from "../enums/online-network.enum";
-import { SkillLevel } from "../enums/skill-level.enum";
-import { StudyType } from "../enums/study-type.enum";
-import { getResume, Resume } from "../interfaces/resume.interface";
+import { FluencyLevel } from "../sections/contact-information/fluency-level.enum";
+import { Language } from "../sections/contact-information/language.enum";
+import { OnlineNetwork } from "../sections/contact-information/online-network.enum";
+import { SkillLevel } from "../sections/skills/skill-level.enum";
+import { StudyType } from "../sections/education/study-type.enum";
+import { getResume, Resume } from "../resume.interface";
 
 export interface ResumeState {
   resume: Resume;

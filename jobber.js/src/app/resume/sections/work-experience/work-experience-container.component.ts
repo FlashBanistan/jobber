@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { Work } from "../interfaces/work.interface";
+import { Work } from "./work.interface";
 
 @Component({
   selector: "app-work-experience-container",

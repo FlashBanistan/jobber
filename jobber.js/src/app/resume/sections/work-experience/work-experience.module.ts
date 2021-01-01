@@ -4,7 +4,7 @@ import { WorkExperienceContainerComponent } from "./work-experience-container.co
 import { WorkExperienceComponent } from "./work-experience/work-experience.component";
 import { FormsModule } from "@angular/forms";
 import { MaterialModule } from "src/app/shared/material.module";
-import { ResumeSectionModule } from "../resume-section/resume-section.module";
+import { ResumeSectionModule } from "../../resume-section/resume-section.module";
 
 @NgModule({
   declarations: [WorkExperienceContainerComponent, WorkExperienceComponent],

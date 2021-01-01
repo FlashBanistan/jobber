@@ -1,4 +1,4 @@
-import { StudyType } from "../enums/study-type.enum";
+import { StudyType } from "./study-type.enum";
 
 export interface Education {
   readonly id: number;
