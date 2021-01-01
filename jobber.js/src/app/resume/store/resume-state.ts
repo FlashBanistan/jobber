@@ -124,19 +124,19 @@ export const initialResumeState: ResumeState = {
         id: 1,
         resume: 1,
         language: Language.ENGLISH,
-        fluency: FluencyLevel.SUPERIOR,
+        fluency: FluencyLevel.ELEMENTARY,
       },
       {
         id: 2,
         resume: 1,
         language: Language.SPANISH,
-        fluency: FluencyLevel.INTERMEDIATE,
+        fluency: FluencyLevel.FULL_PROFESSIONAL_WORKING,
       },
       {
         id: 3,
         resume: 1,
         language: Language.MANDARIN,
-        fluency: FluencyLevel.NOVICE,
+        fluency: FluencyLevel.NATIVE,
       },
     ],
     interests: [

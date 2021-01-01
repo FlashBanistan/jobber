@@ -17,10 +17,11 @@ MASTERY_LEVELS = (
 )
 
 FLUENCY_LEVELS = (
-    ('NOVICE', 'Novice'),
-    ('INTERMEDIATE', 'Intermediate'),
-    ('ADVANCED', 'Advanced'),
-    ('SUPERIOR', 'Superior'),
+    ('ELEMENTARY', 'Elementary'),
+    ('LIMITED_WORKING', 'Limited Working'),
+    ('PROFESSIONAL_WORKING', 'Professional Working'),
+    ('FULL_PROFESSIONAL_WORKING', 'Full Professional Working'),
+    ('NATIVE', 'Native'),
 )
 
 ONLINE_NETWORKS = (
@@ -99,7 +100,7 @@ LANGUAGES = (
     ('MESOPOTAMIAN_ARABIC', 'Mesopotamian Arabic'),
     ('ASSAMESE', 'Assamese'),
     ('SINHALA', 'Sinhala'),
-    ('NORTHER_KURDISH', 'Northern Kurdish'),
+    ('NORTHERN_KURDISH', 'Northern Kurdish'),
     ('HEJAZI_ARABIC', 'Hejazi Arabic'),
     ('NIGERIAN_FULFULDE', 'Nigerian Fulfulde'),
     ('BAVARIAN', 'Bavarian'),
