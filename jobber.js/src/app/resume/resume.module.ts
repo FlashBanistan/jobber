@@ -8,7 +8,7 @@ import { ResumeRoutingModule } from "./resume-routing.module";
 import { ResumeLayoutComponent } from "./resume-layout/resume-layout.component";
 import { MaterialModule } from "../shared/material.module";
 import { ContactInformationModule } from "./sections/contact-information/contact-information.module";
-import { AboutSectionModule } from "./sections/about-section/about-section.module";
+import { SummaryModule } from "./sections/summary/summary.module";
 import { WorkExperienceModule } from "./sections/work-experience/work-experience.module";
 
 @NgModule({
@@ -20,7 +20,7 @@ import { WorkExperienceModule } from "./sections/work-experience/work-experience
     MaterialModule,
     ResumeRoutingModule,
     ContactInformationModule,
-    AboutSectionModule,
+    SummaryModule,
     WorkExperienceModule,
   ],
   providers: [],

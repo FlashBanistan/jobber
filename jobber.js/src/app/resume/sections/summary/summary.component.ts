@@ -7,12 +7,12 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "app-about-section",
-  templateUrl: "./about-section.component.html",
-  styleUrls: ["./about-section.component.scss"],
+  selector: "app-summary",
+  templateUrl: "./summary.component.html",
+  styleUrls: ["./summary.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutSectionComponent {
+export class SummaryComponent {
   @Input() summary: string;
   @Input() editing: boolean;
   @Output() toggleEditing = new EventEmitter();

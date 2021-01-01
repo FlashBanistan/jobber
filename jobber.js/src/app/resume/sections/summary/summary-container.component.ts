@@ -9,16 +9,16 @@ import {
 import { ResumeState } from "../../store/resume-state";
 
 @Component({
-  selector: "app-about-section-container",
-  template: ` <app-about-section
+  selector: "app-summary-container",
+  template: ` <app-summary
     [summary]="summary$ | async"
     [editing]="editing$ | async"
     (toggleEditing)="toggleEditing()"
     (saveField)="saveField($event)"
-  ></app-about-section>`,
+  ></app-summary>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutSectionContainerComponent {
+export class SummaryContainerComponent {
   summary$: Observable<string>;
   editing$: Observable<boolean>;
 
