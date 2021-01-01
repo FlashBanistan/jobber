@@ -7,9 +7,9 @@ import { ResumeEffects } from "./store/resume-effects";
 import { ResumeRoutingModule } from "./resume-routing.module";
 import { ResumeLayoutComponent } from "./resume-layout/resume-layout.component";
 import { MaterialModule } from "../shared/material.module";
-import { ContactInformationModule } from "./contact-information/contact-information.module";
-import { AboutSectionModule } from "./about-section/about-section.module";
-import { WorkExperienceModule } from "./work-experience/work-experience.module";
+import { ContactInformationModule } from "./sections/contact-information/contact-information.module";
+import { AboutSectionModule } from "./sections/about-section/about-section.module";
+import { WorkExperienceModule } from "./sections/work-experience/work-experience.module";
 
 @NgModule({
   declarations: [ResumeLayoutComponent],

@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { ResumeLanguage } from "../interfaces/resume-language.interface";
-import { OnlineProfile } from "../interfaces/online-profile.interface";
-import { ResumeLocation } from "../interfaces/resume-location.interface";
+import { ResumeLanguage } from "../../interfaces/resume-language.interface";
+import { OnlineProfile } from "../../interfaces/online-profile.interface";
+import { ResumeLocation } from "../../interfaces/resume-location.interface";
 import {
   saveEmail,
   saveLabel,
@@ -23,7 +23,7 @@ import {
   toggleIsEditingProfiles,
   toggleIsEditingWebsite,
   toggleIsEditingLanguages,
-} from "../store/actions";
+} from "../../store/actions";
 import {
   selectEmail,
   selectIsEditingEmail,
@@ -43,8 +43,8 @@ import {
   selectPicture,
   selectProfiles,
   selectWebsite,
-} from "../store/resume-selectors";
-import { ResumeState } from "../store/resume-state";
+} from "../../store/resume-selectors";
+import { ResumeState } from "../../store/resume-state";
 
 @Component({
   selector: "app-contact-information-container",

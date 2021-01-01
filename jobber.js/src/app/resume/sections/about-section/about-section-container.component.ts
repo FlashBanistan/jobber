@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { saveSummary, toggleIsEditingSummary } from "../store/actions";
+import { saveSummary, toggleIsEditingSummary } from "../../store/actions";
 import {
   selectIsEditingSummary,
   selectSummary,
-} from "../store/resume-selectors";
-import { ResumeState } from "../store/resume-state";
+} from "../../store/resume-selectors";
+import { ResumeState } from "../../store/resume-state";
 
 @Component({
   selector: "app-about-section-container",
