@@ -17,6 +17,7 @@ export interface ResumeState {
   isEditingLocation: boolean;
   isEditingProfiles: boolean;
   isEditingLanguages: boolean;
+  isEditingWork: boolean;
   isLoading: boolean;
 }
 
@@ -54,13 +55,28 @@ export const initialResumeState: ResumeState = {
       {
         id: 1,
         resume: 1,
-        company: "Company",
+        company: "Apple",
         position: "President",
-        website: "http://company.com",
+        website: "https://apple.com",
         startDate: "2013-01-01",
         endDate: "2014-01-01",
-        summary: "Description...",
+        summary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
         highlights: ["Started the company"],
+      },
+      {
+        id: 2,
+        resume: 1,
+        company: "Microsoft",
+        position: "CEO/President",
+        website: "https://microsoft.com",
+        startDate: "2015-02-05",
+        endDate: "2018-07-10",
+        summary: `Microsoft is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.`,
+        highlights: [
+          "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+          "Successfully won Techcrunch Disrupt",
+          "Optimized an algorithm that holds the current world record for Weisman Scores",
+        ],
       },
     ],
     volunteer: [
@@ -162,5 +178,6 @@ export const initialResumeState: ResumeState = {
   isEditingLocation: false,
   isEditingProfiles: false,
   isEditingLanguages: false,
+  isEditingWork: false,
   isLoading: false,
 };

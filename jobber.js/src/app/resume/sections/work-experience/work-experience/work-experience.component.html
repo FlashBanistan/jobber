@@ -1,37 +1,140 @@
 <app-resume-section>
   <app-resume-section-icon>
-    <button mat-icon-button>
+    <button
+      mat-icon-button
+      (click)="
+        isEditing
+          ? saveWorkExperience.emit(_workExperience)
+          : toggleIsEditing.emit()
+      "
+    >
       <mat-icon>apartments</mat-icon>
     </button>
   </app-resume-section-icon>
   <app-resume-section-header>Work Experience</app-resume-section-header>
   <app-resume-section-content>
-    <div *ngFor="let work of workExperience">
-      <p>
-        <strong>{{ work.position }}</strong
-        >,&nbsp;<a href="{{ work.website }}" target="_blank">{{
-          work.company
-        }}</a>
-      </p>
+    <ng-container *ngIf="!isEditing; else editing">
+      <div *ngFor="let work of _workExperience; trackBy: trackByFn">
+        <p>
+          <strong>{{ work.position }}</strong
+          >,&nbsp;<a href="{{ work.website }}" target="_blank">{{
+            work.company
+          }}</a>
+        </p>
 
-      <p>
-        <small>
-          <span>{{ work.startDate | date }} - {{ work.endDate | date }}</span>
-          &nbsp; &nbsp;
-          <mat-icon>access_time</mat-icon>
-          <span>{{ durationElapsed(work.startDate, work.endDate) }}</span>
-        </small>
-      </p>
+        <p>
+          <small>
+            <span>{{ work.startDate | date }} - {{ work.endDate | date }}</span>
+            &nbsp; &nbsp;
+            <mat-icon>access_time</mat-icon>&nbsp;
+            <span>{{ durationElapsed(work.startDate, work.endDate) }}</span>
+          </small>
+        </p>
 
-      <p>
-        {{ work.summary }}
-      </p>
+        <p>
+          {{ work.summary }}
+        </p>
 
-      <ul>
-        <li *ngFor="let highlight of work.highlights">
-          {{ highlight }}
-        </li>
-      </ul>
-    </div>
+        <ul>
+          <li *ngFor="let highlight of work.highlights">
+            {{ highlight }}
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+
+    <ng-template #editing>
+      <div
+        *ngFor="let work of _workExperience; let i = index; trackBy: trackByFn"
+      >
+        <p>
+          <strong>
+            <mat-form-field>
+              <mat-label>Position</mat-label>
+              <input matInput [(ngModel)]="work.position" />
+            </mat-form-field> </strong
+          >&nbsp;<mat-form-field>
+            <mat-label>Company</mat-label>
+            <input matInput [(ngModel)]="work.company" /> </mat-form-field
+          >&nbsp;<mat-form-field>
+            <mat-label>Website</mat-label>
+            <input matInput [(ngModel)]="work.website" />
+          </mat-form-field>
+          <button mat-icon-button>
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </p>
+
+        <p>
+          <small>
+            <span
+              ><mat-form-field>
+                <mat-label>Start Date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="startDate_i"
+                  [(ngModel)]="work.startDate"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="startDate_i"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #startDate_i></mat-datepicker>
+              </mat-form-field>
+              -
+              <mat-form-field>
+                <mat-label>End Date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="endDate_i"
+                  [(ngModel)]="work.endDate"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="endDate_i"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #endDate_i></mat-datepicker> </mat-form-field
+            ></span>
+            &nbsp; &nbsp;
+            <mat-icon>access_time</mat-icon>&nbsp;
+            <span>{{ durationElapsed(work.startDate, work.endDate) }}</span>
+          </small>
+        </p>
+
+        <p>
+          <mat-form-field class="summary">
+            <mat-label>Summary</mat-label>
+            <textarea
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="3"
+              cdkAutosizeMaxRows="8"
+              [(ngModel)]="work.summary"
+            ></textarea>
+          </mat-form-field>
+        </p>
+
+        <ul>
+          <li
+            *ngFor="
+              let highlight of work.highlights;
+              trackBy: trackByFn;
+              let j = index
+            "
+          >
+            <mat-form-field class="highlight">
+              <mat-label>Highlight</mat-label>
+              <textarea
+                matInput
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="2"
+                [(ngModel)]="work.highlights[j]"
+              ></textarea>
+            </mat-form-field>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
   </app-resume-section-content>
 </app-resume-section>

@@ -11,6 +11,7 @@ import {
   saveProfiles,
   saveSummary,
   saveWebsite,
+  saveWorkExperience,
   toggleIsEditingEmail,
   toggleIsEditingLabel,
   toggleIsEditingLanguages,
@@ -21,6 +22,7 @@ import {
   toggleIsEditingProfiles,
   toggleIsEditingSummary,
   toggleIsEditingWebsite,
+  toggleIsEditingWork,
 } from "./actions";
 import { initialResumeState } from "./resume-state";
 
@@ -65,6 +67,10 @@ export const resumeReducers = createReducer(
   on(toggleIsEditingLanguages, (state) => ({
     ...state,
     isEditingLanguages: !state.isEditingLanguages,
+  })),
+  on(toggleIsEditingWork, (state) => ({
+    ...state,
+    isEditingWork: !state.isEditingWork,
   })),
   on(saveName, (state, action) => ({
     ...state,
@@ -172,6 +178,14 @@ export const resumeReducers = createReducer(
       languages: action.languages,
     },
     isEditingLanguages: false,
+  })),
+  on(saveWorkExperience, (state, action) => ({
+    ...state,
+    resume: {
+      ...state.resume,
+      work: action.workExperience,
+    },
+    isEditingWork: false,
   })),
   on(fetchResume, (state) => ({
     ...state,

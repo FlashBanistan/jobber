@@ -14,6 +14,7 @@ const getSummary = (state: ResumeState) => state.resume.basics.summary;
 const getLocation = (state: ResumeState) => state.resume.basics.location;
 const getProfiles = (state: ResumeState) => state.resume.basics.profiles;
 const getLanguages = (state: ResumeState) => state.resume.languages;
+const getWorkExperience = (state: ResumeState) => state.resume.work;
 export const selectName = createSelector(selectResumeState, getName);
 export const selectLabel = createSelector(selectResumeState, getLabel);
 export const selectPicture = createSelector(selectResumeState, getPicture);
@@ -24,6 +25,10 @@ export const selectSummary = createSelector(selectResumeState, getSummary);
 export const selectLocation = createSelector(selectResumeState, getLocation);
 export const selectProfiles = createSelector(selectResumeState, getProfiles);
 export const selectLanguages = createSelector(selectResumeState, getLanguages);
+export const selectWorkExperience = createSelector(
+  selectResumeState,
+  getWorkExperience
+);
 
 // IsEditing
 const getIsEditingName = (state: ResumeState) => state.isEditingName;
@@ -36,6 +41,7 @@ const getIsEditingSummary = (state: ResumeState) => state.isEditingSummary;
 const getIsEditingLocation = (state: ResumeState) => state.isEditingLocation;
 const getIsEditingProfiles = (state: ResumeState) => state.isEditingProfiles;
 const getIsEditingLanguages = (state: ResumeState) => state.isEditingLanguages;
+const getIsEditingWork = (state: ResumeState) => state.isEditingWork;
 export const selectIsEditingName = createSelector(
   selectResumeState,
   getIsEditingName
@@ -75,6 +81,10 @@ export const selectIsEditingProfiles = createSelector(
 export const selectIsEditingLanguages = createSelector(
   selectResumeState,
   getIsEditingLanguages
+);
+export const selectIsEditingWork = createSelector(
+  selectResumeState,
+  getIsEditingWork
 );
 
 const getIsLoading = (state: ResumeState) => state.isLoading;
