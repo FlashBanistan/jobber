@@ -1,6 +1,6 @@
 Django==2.2.8
 psycopg2==2.8.3
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 djangorestframework-camel-case==1.1.2
 djangorestframework-simplejwt==4.3.0
 drf-flex-fields==0.6.1
